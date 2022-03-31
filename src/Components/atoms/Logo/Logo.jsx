@@ -9,7 +9,6 @@ const Wrap = styled.div`
 
   .logo-container {
     // border: 1px solid black;
-    height: 55px;
     font-family: 'Amatic SC';
     display: flex;
     flex-wrap: wrap;
@@ -18,26 +17,27 @@ const Wrap = styled.div`
   }
 
   .dotsAndSlash {
+    // border: 1px solid red;
     display: flex;
+    margin-bottom: 0.7rem;
   }
 
   .dot-wrap {
-    // border: 1px solid red;
     position: relative;
     padding: 5px;
     width: 5px;
     display: flex;
     align-items: flex-end;
-  }
 
-  .dot {
-    position: absolute;
-    right: 0px;
-    bottom: 0px;
-    height: 8px;
-    width: 8px;
-    background: ${({ theme }) => theme.color.teal};
-    border-radius: 50%;
+    .dot {
+      position: absolute;
+      right: 0px;
+      bottom: 0px;
+      height: 8px;
+      width: 8px;
+      background: ${({ theme }) => theme.color.teal};
+      border-radius: 50%;
+    }
   }
 
   .slashContainer {
@@ -73,7 +73,7 @@ const Wrap = styled.div`
       font-weight: 900;
       padding: 0;
       margin-left: 0;
-      margin-top: 1.7rem;
+      margin-top: 1rem;
     }
   }
 `;

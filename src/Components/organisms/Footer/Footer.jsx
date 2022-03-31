@@ -3,13 +3,14 @@ import styled from 'styled-components';
 import Logo from '../../atoms/LogoWithSunball/LogoWithSunball';
 
 const Wrap = styled.div`
-  border: 1px solid red;
+  // border: 1px solid red;
   position: relative;
   display: flex;
   width: 100%;
   align-items: baseline;
   justify-content: center;
   font-family: 'Amatic SC', cursive;
+  padding: 1rem;
 
   > span {
     color: ${({ theme }) => theme.color.pink};
