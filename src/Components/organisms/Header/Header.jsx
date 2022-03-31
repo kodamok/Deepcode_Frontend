@@ -5,7 +5,6 @@ import Logo from '../../atoms/Logo/Logo';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 import { FaGithubSquare } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
-import useOnClickOutside from '../../../hooks/useOnClickOutside';
 
 const Wrap = styled.div`
   // border: 2px solid red;
@@ -73,16 +72,16 @@ const LogoMobile = styled.div`
   /* border:1px solid red; */
   // border: 2px solid red;
   display: flex;
+  gap: 11rem;
 `;
 
 const MobileMenuContainer = styled.div`
   position: absolute;
   top: 85px;
-  background-color: ${({ theme }) => theme.color.cream};
-  width: 99.5%;
-  height: 100vh;
+  background-color: ${({ theme }) => theme.color.blue};
+  width: 100%;
+  height: 90vh;
   margin: 0 auto;
-  opacity: 85%;
 `;
 
 const MobileMenu = styled.div`
@@ -97,8 +96,9 @@ const MobileMenu = styled.div`
     list-style-type: none;
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
+    align-items: flex-end;
     justify-content: center;
+    padding: 1rem;
   }
 
   li {
@@ -110,7 +110,7 @@ const MobileMenu = styled.div`
 
   .nav-box {
     // border: 2px solid red;
-    text-align: left;
+    text-align: right;
     max-width: 200px;
     min-width: 150px;
     padding: clamp(0.2rem, 0.1rem + 5vw, 0.5rem);
