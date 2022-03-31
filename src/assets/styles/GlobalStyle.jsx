@@ -58,7 +58,7 @@ a{
   font-weight: 900;
 ;
   :hover{
-    color : #6dbae4;
+    color : #EC72C2;
   }
 }
 
