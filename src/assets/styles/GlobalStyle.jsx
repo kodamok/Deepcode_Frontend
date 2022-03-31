@@ -15,7 +15,6 @@ export const GlobalStyle = createGlobalStyle`
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-
     overflow: hidden;
   }
 
@@ -59,9 +58,14 @@ a{
   font-weight: 900;
 ;
   :hover{
-    color : #6E3678;
+    color : #6dbae4;
   }
 }
+
+ul, li {
+  margin:0;
+  padding:0;
+  }
 
 
 .h0 {

@@ -31,7 +31,7 @@ const NavLogo = styled.div`
   }
 
   span {
-    border: 1px solid red;
+    // border: 1px solid red;
     position: relative;
     font-size: 4rem;
     margin-inline: 0.5rem;
