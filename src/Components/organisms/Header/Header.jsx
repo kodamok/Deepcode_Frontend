@@ -103,7 +103,7 @@ const MobileMenuContainer = styled.div`
   position: absolute;
   top: 73px;
   background-color: ${({ theme }) => theme.color.blue};
-  width: 30%;
+  width: 180px;
   right: 20px;
   height: 40vh;
   margin: 0 auto;
