@@ -12,7 +12,7 @@ const ButtonStyle = styled.button`
   color: ${({ theme, color }) => color || theme.color.teal};
   border: ${({ border }) => border || '1px solid black'};
   outline: none;
-  width: ${({ width }) => width || '50%'};
+  width: ${({ width }) => width || '100%'};
   height: ${({ height }) => height || '50px'};
   font-weight: 600;
   //white-space: nowrap;

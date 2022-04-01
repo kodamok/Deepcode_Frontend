@@ -16,6 +16,7 @@ const Wrap = styled.div`
   h2 {
     line-height: 1;
     font-family: 'Amatic SC', cursive;
+    font-size: clamp(1.5rem, 0.5rem + 15vw, 5.063rem);
     font-weight: 900;
     color: ${({ theme }) => theme.color.teal};
   }
@@ -29,7 +30,7 @@ const Form = styled.form`
   min-width: 250px;
   width: 100%;
   height: 100%;
-  padding: 2rem;
+  padding: clamp(0.5rem, 0.5rem + 2vw, 2rem);
   max-width: 500px;
   box-shadow: ${({ theme }) => theme.boxShadow.mainShadow};
 `;
@@ -105,7 +106,7 @@ const Contact = () => {
           borderradius="0 0 10px 10px"
         />
 
-        <Button text="Send" type="submit" color="black" background="#6dbae4" width="97%" />
+        <Button text="Send" type="submit" color="black" background="#6dbae4" />
       </Form>
       {emailSent && <span>Thank you for your message, we will be in touch in no time!</span>}
     </Wrap>

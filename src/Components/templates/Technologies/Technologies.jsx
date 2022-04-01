@@ -34,6 +34,7 @@ const FlexContainer = styled.div`
     font-weight: 900;
     color: ${({ theme }) => theme.color.teal};
     text-align: center;
+    font-size: clamp(1.5rem, 0.5rem + 15vw, 5.063rem);
   }
 `;
 

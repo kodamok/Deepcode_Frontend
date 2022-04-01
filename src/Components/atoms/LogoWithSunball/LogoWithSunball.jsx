@@ -40,12 +40,12 @@ const NavLogo = styled.div`
       content: '';
       position: absolute;
       // border: 1px solid black;
-      width: 15px;
-      height: 15px;
+      width: 12px;
+      height: 12px;
       top: 30px;
       left: 7px;
       border-radius: 50%;
-      background-color: ${({ theme }) => theme.color.background};
+      background-color: ${({ theme }) => theme.color.blue};
       box-shadow: 0 0 10px 4px ${({ theme }) => theme.color.teal};
       z-index: 500;
 

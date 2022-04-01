@@ -7,10 +7,12 @@ const Wrap = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: clamp(0.5rem, 0.5rem + 10vw, 1rem);
 
   h2 {
     font-family: 'Amatic SC', cursive;
     font-weight: 900;
+    font-size: clamp(1.5rem, 0.5rem + 15vw, 5.063rem);
     color: ${({ theme }) => theme.color.teal};
   }
 `;
@@ -22,10 +24,12 @@ const IntroText = styled.div`
   border: 2px solid black;
   border-radius: 10px;
   background-color: ${({ theme }) => theme.color.background};
-  padding: clamp(0.5rem, 0.5rem + 10vw, 2rem);
+  padding: clamp(0.5rem, 0.5rem + 3vw, 2rem);
 
   p {
     color: ${({ theme }) => theme.color.cream};
+    font-size: clamp(1rem, 0.1rem + 5vw, 1.2rem);
+    text-align: left;
   }
 `;
 

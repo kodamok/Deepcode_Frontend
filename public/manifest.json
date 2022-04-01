@@ -3,7 +3,7 @@
   "short_name": "../",
   "icons": [
     {
-      "src": "/img/caricatura.png",
+      "src": "./img/caricatura.png",
       "type": "image/png",
       "sizes": "144x144",
       "purpose": "any maskable"
@@ -15,7 +15,7 @@
     }
   ],
   "start_url": "/",
-  "scope": ".",
+  "scope": "./",
   "display": "standalone",
   "orientation": "portrait-primary",
   "background_color": "#fff",

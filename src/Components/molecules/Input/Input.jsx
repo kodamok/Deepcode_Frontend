@@ -139,7 +139,6 @@ to {
 `; */
 
 const ContainerForm = styled.div`
-  width: 100%;
   display: flex;
   flex-direction: column;
   width: ${({ width }) => width || '100%'};
@@ -147,7 +146,6 @@ const ContainerForm = styled.div`
   input {
     background: ${({ theme }) => theme.color.blue};
     font-size: 1rem;
-    height: 30px;
     max-width: 100%;
     letter-spacing: 1px;
     padding: 0.5rem;
@@ -184,7 +182,7 @@ const ContainerTxtArea = styled.div`
     letter-spacing: 1px;
     margin-bottom: ${({ margin }) => margin} || '1rem';
     resize: vertical;
-    border-radius: ${({ borderRadius }) => borderRadius || '0'};
+    border-radius: ${({ borderradius }) => borderradius || '0'};
     padding: 0.5rem;
 
     &:focus {
@@ -242,10 +240,10 @@ function Input({
             onBlur={onBlur}
             color={color}
             borderradius={borderradius}
+            width={width}
           >
             <label htmlFor={id || name}>{label}</label>
             <textarea
-              width={width}
               rows={rows}
               cols={cols || 64}
               maxLength={1000}
