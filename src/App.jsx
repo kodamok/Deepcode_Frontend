@@ -17,7 +17,7 @@ const App = () => {
       <GlobalStyle />
       <MainContainerApp>
         <Routes>
-          <Route path="/Deepcode_Frontend" element={<HomePage />} />
+          <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />
           <Route path="/technologies" element={<Technologies />} />
           <Route path="/experience" element={<Experience />} />

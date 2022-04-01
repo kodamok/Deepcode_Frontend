@@ -129,7 +129,7 @@ const Header = () => {
       {detectScreen === false ? (
         <NavMenu>
           <div className="logo">
-            <Link to="/Deepcode_Frontend">
+            <Link to="/">
               <Logo />
             </Link>
           </div>

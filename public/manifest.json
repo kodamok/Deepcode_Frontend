@@ -14,7 +14,7 @@
       "sizes": "512x512"
     }
   ],
-  "start_url": "/Deepcode_Frontend",
+  "start_url": "/",
   "scope": ".",
   "display": "standalone",
   "orientation": "portrait-primary",
