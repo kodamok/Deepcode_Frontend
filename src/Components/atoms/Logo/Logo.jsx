@@ -12,14 +12,13 @@ const Wrap = styled.div`
     font-family: 'Amatic SC';
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
+    align-items: flex-end;
     /* border:2px solid white; */
   }
 
   .dotsAndSlash {
     // border: 1px solid red;
     display: flex;
-    margin-bottom: 0.7rem;
   }
 
   .dot-wrap {
