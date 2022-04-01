@@ -10,6 +10,7 @@ const Wrap = styled.div`
   align-items: baseline;
   justify-content: center;
   font-family: 'Amatic SC', cursive;
+  padding: 0.5rem;
 
   > span {
     color: ${({ theme }) => theme.color.pink};

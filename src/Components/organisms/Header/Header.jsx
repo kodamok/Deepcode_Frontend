@@ -1,10 +1,35 @@
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import React, { useState, useRef } from 'react';
+import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import Logo from '../../atoms/Logo/Logo';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 import { FaGithubSquare } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
+import useOnClickOutside from '../../../hooks/useOnClickOutside';
+
+const floating1 = keyframes`
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(2px);
+  }
+`;
+
+const floating2 = keyframes`
+  0%,
+  100% {
+    transform: translateY(0);
+    transform: translateX(0);
+  }
+
+  50% {
+    transform: translateY(2px);
+    transform: translateX(-2px);
+  }
+`;
 
 const Wrap = styled.div`
   // border: 2px solid red;
@@ -18,8 +43,9 @@ const NavMenu = styled.nav`
   align-items: center;
   justify-content: space-around;
   flex-wrap: wrap;
-  width: 80%;
-  padding: clamp(0.5rem, 0.1rem + 10vw, 1rem);
+  width: 100%;
+  padding: clamp(0.5rem, 0.1rem + 2vw, 0.5rem);
+  // border-bottom: 1px solid #366178;
   /* border:1px solid red; */
 
   ul {
@@ -75,11 +101,22 @@ const LogoMobile = styled.div`
 
 const MobileMenuContainer = styled.div`
   position: absolute;
-  top: 75px;
+  top: 73px;
   background-color: ${({ theme }) => theme.color.blue};
-  width: 100%;
-  height: 90vh;
+  width: 30%;
+  right: 20px;
+  height: 40vh;
   margin: 0 auto;
+  border-radius: 10px 5px 5px 10px;
+  box-shadow: ${({ theme }) => theme.boxShadow.mainShadow};
+  z-index: 100;
+
+  animation-name: ${floating1};
+  animation-duration: 2s;
+  animation-direction: alternate-reverse;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: infinite;
+  animation-delay: 0.1s;
 `;
 
 const MobileMenu = styled.div`
@@ -87,7 +124,9 @@ const MobileMenu = styled.div`
   display: flex;
   justify-content: space-between;
   width: 100%;
-  border: 1px solid red;
+  // border: 1px solid red;
+
+  border-bottom: 1px solid #366178;
 
   ul {
     // border: 2px solid red;
@@ -104,6 +143,13 @@ const MobileMenu = styled.div`
     color: ${({ theme }) => theme.color.green};
     font-family: 'Amatic SC';
     font-size: ${({ theme }) => theme.fontSizeAmatic.ml};
+
+    animation-name: ${floating2};
+    animation-duration: 2s;
+    animation-direction: reverse;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-delay: 0.4s;
   }
 
   .nav-box {
@@ -116,9 +162,34 @@ const MobileMenu = styled.div`
   }
 `;
 
+const mobileDropMenu = [
+  {
+    id: 1,
+    name: 'Who am I',
+    path: '/about'
+  },
+  {
+    id: 2,
+    name: 'Technologies',
+    path: '/technologies'
+  },
+  {
+    id: 3,
+    name: 'Experience',
+    path: '/experience'
+  },
+  {
+    id: 4,
+    name: 'Contact',
+    path: '/contact'
+  }
+];
+
 const Header = () => {
   const [mobileMenu, setMobileMenu] = useState(false);
   const detectScreen = useMediaQuery('(max-width:720px)');
+  const ref = useRef(null);
+  useOnClickOutside(ref, () => setMobileMenu(false));
 
   const handleOpenMenuMobile = () => {
     setMobileMenu((prev) => !prev);
@@ -182,7 +253,7 @@ const Header = () => {
         </NavMenu>
       ) : (
         <MobileMenu>
-          <LogoMobile onClick={() => handleOpenMenuMobile()}>
+          <LogoMobile>
             <IconsBox>
               <div>
                 <a
@@ -203,32 +274,21 @@ const Header = () => {
                 </a>
               </div>
             </IconsBox>
-            <Logo />
+            <div onClick={() => handleOpenMenuMobile()}>
+              <Logo />
+            </div>
           </LogoMobile>
 
           {mobileMenu && (
-            <MobileMenuContainer>
+            <MobileMenuContainer ref={ref}>
               <ul>
-                <li className="nav-box">
-                  <Link to="/about" className="link">
-                    Who am I
-                  </Link>
-                </li>
-                <li className="nav-box">
-                  <Link to="/technologies" className="link">
-                    Technologies
-                  </Link>
-                </li>
-                <li className="nav-box">
-                  <Link to="/experience" className="link">
-                    Experience
-                  </Link>
-                </li>
-                <li className="nav-box">
-                  <Link to="/contact" className="link">
-                    Contact
-                  </Link>
-                </li>
+                {mobileDropMenu.map((item) => (
+                  <li className="nav-box" key={item.id}>
+                    <Link to={item.path} className="link">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
               </ul>
             </MobileMenuContainer>
           )}
