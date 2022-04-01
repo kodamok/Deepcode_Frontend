@@ -1,0 +1,26 @@
+{
+  "name": "Deep Code",
+  "short_name": "../",
+  "icons": [
+    {
+      "src": "/img/caricatura.png",
+      "type": "image/png",
+      "sizes": "144x144",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/img/caricatura.png",
+      "type": "image/png",
+      "sizes": "512x512"
+    }
+  ],
+  "start_url": "/Deepcode_Frontend",
+  "scope": ".",
+  "display": "standalone",
+  "orientation": "portrait-primary",
+  "background_color": "#fff",
+  "theme_color": "#3f51b5",
+  "description": "Deep Universal Code",
+  "dir": "ltr",
+  "lang": "en-US"
+}

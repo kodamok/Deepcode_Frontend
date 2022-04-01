@@ -10,8 +10,7 @@ const MainWrap = styled.div`
     left: 0;
     top: 0;
   }
-
-  .footer---pin {
+  .footer--pin {
     position: relative;
     left: 0;
     bottom: 0;

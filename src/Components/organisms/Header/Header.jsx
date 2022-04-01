@@ -65,19 +65,17 @@ const LogoMobile = styled.div`
   position: sticky;
   display: flex;
   align-items: felx-end;
-  justify-content: flex-end;
+  justify-content: space-between;
   flex-wrap: wrap;
   padding: 0.7rem;
   width: 100%;
   /* border:1px solid red; */
   // border: 2px solid red;
-  display: flex;
-  gap: 11rem;
 `;
 
 const MobileMenuContainer = styled.div`
   position: absolute;
-  top: 85px;
+  top: 75px;
   background-color: ${({ theme }) => theme.color.blue};
   width: 100%;
   height: 90vh;
@@ -87,7 +85,7 @@ const MobileMenuContainer = styled.div`
 const MobileMenu = styled.div`
   position: relative;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   width: 100%;
   border: 1px solid red;
 
