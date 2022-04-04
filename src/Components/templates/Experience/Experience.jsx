@@ -1,6 +1,7 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import NSx512 from '../../../assets/png/NSx512.png';
+import useHover from '../../../hooks/useHover';
 import LinkWithImg from '../../atoms/LinkWithImg/LinkWithImg';
 
 const Wrap = styled.div`
@@ -39,7 +40,7 @@ const linkWithImgInfo = {
 };
 
 const Experience = () => {
-  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
+  /* const [windowWidth, setWindowWidth] = useState(window.innerWidth);
   const [mobileFilter, setMobileFilter] = useState(true);
   console.log(windowWidth, mobileFilter);
   // OBSERVE WINDOW WIDTH
@@ -85,13 +86,17 @@ const Experience = () => {
     p.addEventListener('mouseleave', () => {
       p.style.visibility = 'hidden';
     });
-  };
+  }; */
+
+  //useHover needs to be a child of a position: relative parent
+  //Add the text on the useHover(text) and watch it work and resize
+
+  const { showDescription } = useHover(linkWithImgInfo.description);
   return (
     <Wrap>
       <h2>Experience</h2>
       <Container onMouseEnter={showDescription}>
         <LinkWithImg
-          onMouseEnter={showDescription}
           href={linkWithImgInfo.href}
           imgSrc={linkWithImgInfo.imgSrc}
           alt={linkWithImgInfo.alt}
