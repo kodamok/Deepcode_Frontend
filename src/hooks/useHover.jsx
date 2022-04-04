@@ -8,11 +8,10 @@ export default function useHover(input = textInput) {
   // OBSERVE WINDOW WIDTH
 
   useEffect(() => {
-    const updateWindowWidth = () => {
+    window.addEventListener('resize', () => {
       setWindowWidth(newWidth);
-    };
-    window.addEventListener('resize', updateWindowWidth);
-  }, [windowWidth]);
+    });
+  }, [newWidth]);
 
   function showDescription(e) {
     let p = document.createElement('p'); //<p></p>
