@@ -100,11 +100,11 @@ const Experience = () => {
   //useHover needs to be a child of a position: relative parent
   //Add the text on the useHover(text) and watch it work and resize
 
-  const { showDescription } = useHover(linkWithImgInfo.description);
+  const { createHover } = useHover(linkWithImgInfo.description);
   return (
     <Wrap>
       <h2>Experience</h2>
-      <Container onMouseEnter={showDescription}>
+      <Container onMouseEnter={createHover}>
         <LinkWithImg
           href={linkWithImgInfo.href}
           imgSrc={linkWithImgInfo.imgSrc}
