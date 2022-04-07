@@ -1,24 +1,13 @@
-import { useEffect, useState } from 'react';
+//useHover needs to be a child of a position: relative parent
+//Add the text on the useHover(text) and watch it work and resize
 
 let textInput = '';
 export default function useHover(input = textInput) {
-  const newWidth = window.innerWidth;
-  const [windowWidth, setWindowWidth] = useState(newWidth);
-
-  // OBSERVE WINDOW WIDTH
-
-  useEffect(() => {
-    window.addEventListener('resize', () => {
-      setWindowWidth(newWidth);
-    });
-  }, [newWidth]);
-
-  function showDescription(e) {
+  function createHover(e) {
     let p = document.createElement('p'); //<p></p>
 
     p.innerText = input; //attach text inside the html element
     p.setAttribute('id', 'hover'); //<p id="hover"></p>
-    p.style.width = `calc(${windowWidth}  / 100vw)`; // makes element resizable
     p.style.position = 'absolute'; //style element
     p.style.top = '0px'; //style element
     p.style.left = '0px'; //style element
@@ -42,5 +31,5 @@ export default function useHover(input = textInput) {
     });
   }
 
-  return { showDescription };
+  return { createHover };
 }
