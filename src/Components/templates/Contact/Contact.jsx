@@ -43,7 +43,8 @@ const Contact = () => {
   const [message, setMessage] = useState('');
   const [emailSent, setEmailSent] = useState(false);
 
-  const submit = () => {
+  const submit = (e) => {
+    e.preventDefault();
     if (name && email && message) {
       const serviceId = 'service_4fhedxn';
       const templateId = 'template_9mnagip';
