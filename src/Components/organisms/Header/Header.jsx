@@ -6,6 +6,7 @@ import useMediaQuery from '../../../hooks/useMediaQuery';
 import { FaGithubSquare } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import useOnClickOutside from '../../../hooks/useOnClickOutside';
+import Login from '../../templates/Login/Login';
 
 const floating1 = keyframes`
   0%,
@@ -194,6 +195,8 @@ const Header = () => {
   const handleOpenMenuMobile = () => {
     setMobileMenu((prev) => !prev);
   };
+  //MODAL OPEN CLOSE SWITCH
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <Wrap>
@@ -205,51 +208,57 @@ const Header = () => {
             </Link>
           </div>
 
-          <ul>
-            <li className="nav-box">
-              <Link to="/about" className="link">
-                Who am I
-              </Link>
-            </li>
-            <li className="nav-box">
-              <Link to="/technologies" className="link">
-                Technologies
-              </Link>
-            </li>
-            <li className="nav-box">
-              <Link to="/experience" className="link">
-                Experience
-              </Link>
-            </li>
-            <li className="nav-box">
-              <Link to="/contact" className="link">
-                Contact
-              </Link>
-            </li>
-            <li>
-              <IconsBox>
-                <div>
-                  <a
-                    href="https://github.com/kodamok?tab=repositories"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FaGithubSquare size={40} color="#6dbae4" />
-                  </a>
-                </div>
+          {!mobileMenu && (
+            <>
+              <ul>
+                {mobileDropMenu.map((item) => (
+                  <li className="nav-box" key={item.id}>
+                    <Link to={item.path} className="link">
+                      {item.name}
+                    </Link>
+                  </li>
+                ))}
+                <li>
+                  <button onClick={() => setIsOpen(true)}>Login</button>
+                </li>
 
-                <div>
-                  <a
-                    href="https://www.linkedin.com/in/david-rabinovich-9000a4110/"
-                    target="_blank"
-                    rel="noreferrer"
-                  >
-                    <FaLinkedin size={40} color="#6dbae4" />
-                  </a>
-                </div>
-              </IconsBox>
-            </li>
-          </ul>
+                {isOpen && (
+                  <>
+                    <Login
+                      isOpen={isOpen}
+                      onClose={() => {
+                        setIsOpen(false);
+                      }}
+                    />
+                  </>
+                )}
+
+                <li>
+                  <IconsBox>
+                    <div>
+                      <a
+                        href="https://github.com/kodamok?tab=repositories"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FaGithubSquare size={40} color="#6dbae4" />
+                      </a>
+                    </div>
+
+                    <div>
+                      <a
+                        href="https://www.linkedin.com/in/david-rabinovich-9000a4110/"
+                        target="_blank"
+                        rel="noreferrer"
+                      >
+                        <FaLinkedin size={40} color="#6dbae4" />
+                      </a>
+                    </div>
+                  </IconsBox>
+                </li>
+              </ul>
+            </>
+          )}
         </NavMenu>
       ) : (
         <MobileMenu>

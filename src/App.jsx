@@ -10,6 +10,7 @@ import About from './Components/templates/About/About';
 import Contact from './Components/templates/Contact/Contact';
 import Technologies from './Components/templates/Technologies/Technologies';
 import Experience from './Components/templates/Experience/Experience';
+import Login from './Components/templates/Login/Login';
 
 const App = () => {
   return (
@@ -22,6 +23,7 @@ const App = () => {
           <Route path="/technologies" element={<Technologies />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/login" element={<Login />} />
         </Routes>
       </MainContainerApp>
     </ThemeProvider>

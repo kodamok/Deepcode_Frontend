@@ -16,6 +16,8 @@ export const GlobalStyle = createGlobalStyle`
     overflow-x: hidden;
   }
 
+
+
   html {
     font-size: 100%;
     box-sizing: border-box;
