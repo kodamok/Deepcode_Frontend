@@ -13,7 +13,8 @@ const Wrap = styled.div`
     font-family: 'Amatic SC', cursive;
     font-weight: 900;
     font-size: clamp(1.5rem, 0.5rem + 15vw, 5.063rem);
-    color: ${({ theme }) => theme.color.teal};
+    color: ${({ theme }) => theme.color.title};
+    -webkit-text-stroke: 0.5px ${({ theme }) => theme.color.stroke};
   }
 `;
 
@@ -21,10 +22,12 @@ const IntroText = styled.div`
   max-width: 50ch;
   display: flex;
   justify-content: center;
-  border: 2px solid black;
+  border: 5px solid ${({ theme }) => theme.color.border};
   border-radius: 10px;
+  border-style: double;
   background-color: ${({ theme }) => theme.color.background};
   padding: clamp(0.5rem, 0.5rem + 3vw, 2rem);
+  box-shadow: ${({ theme }) => theme.boxShadow.mainShadow};
 
   p {
     color: ${({ theme }) => theme.color.cream};

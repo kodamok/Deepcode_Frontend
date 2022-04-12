@@ -27,7 +27,7 @@ html {
 /*16px*/
 
 body {
-  background-color: #f3f0d3;
+  background-color: ${({ theme }) => theme.color.background};
   font-family: 'Amatic SC', cursive;
   font-family: 'Assistant', sans-serif;
   font-family: 'Barrio', cursive;
@@ -38,6 +38,7 @@ body {
 
 p {
   margin-bottom: 1rem;
+  color: ${({ theme }) => theme.color.text}
 }
 
 h1,
@@ -54,11 +55,11 @@ h5 {
 
 a{
   text-decoration: none;
-  color:black;
+  color:${({ theme }) => theme.color.link};
   font-weight: 900;
 ;
   :hover{
-    color : #EC72C2;
+    color : ${({ theme }) => theme.color.hover};
   }
 }
 
@@ -135,5 +136,9 @@ small,
   ::-webkit-scrollbar-thumb:hover {
     background: #555;
   }
+
+
+
+
   
 `;

@@ -34,7 +34,7 @@ const Wrap = styled.div`
       bottom: 0px;
       height: 8px;
       width: 8px;
-      background: ${({ theme }) => theme.color.teal};
+      background: ${({ theme }) => theme.color.link};
       border-radius: 50%;
     }
   }
@@ -48,7 +48,7 @@ const Wrap = styled.div`
     .slash {
       position: absolute;
       right: 8px;
-      background: ${({ theme }) => theme.color.teal};
+      background: ${({ theme }) => theme.color.link};
       border-radius: 10px;
       height: 50px;
       width: 4px;
@@ -67,7 +67,7 @@ const Wrap = styled.div`
     }
     h3 {
       font-family: 'Amatic SC', cursive;
-      color: ${({ theme }) => theme.color.teal};
+      color: ${({ theme }) => theme.color.link};
       line-height: 0rem;
       font-weight: 900;
       padding: 0;

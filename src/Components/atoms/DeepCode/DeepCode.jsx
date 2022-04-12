@@ -8,13 +8,13 @@ const DeepCodeContainer = styled.div`
   text-align: center;
   font-size: clamp(2.25rem, 0.5rem + 30vw, 7.594rem);
   font-family: 'Amatic sc';
-  color: ${({ theme }) => theme.color.blue};
-  -webkit-text-stroke: 1px black;
+  -webkit-text-stroke: 1px ${({ theme }) => theme.color.stroke};
   line-height: 1;
 
   p {
     font-size: inherit;
     margin: 0;
+    color: ${({ theme }) => theme.color.blue};
   }
 
   span {

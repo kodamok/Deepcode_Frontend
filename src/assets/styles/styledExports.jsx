@@ -34,7 +34,7 @@ export const CircleSign = styled.div`
   display: flex;
   justify-content: center;
   width: 330px;
-  background-color: ${({ backgroundColor }) => backgroundColor || 'black'};
+  background-color: ${({ theme }) => theme.color.circleBack};
   border: ${({ border }) => border || '2px solid black'};
   aspect-ratio: 1 / 1;
   border-radius: 50%;

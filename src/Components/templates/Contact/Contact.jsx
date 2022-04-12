@@ -14,11 +14,12 @@ const Wrap = styled.div`
   padding: clamp(0.5rem, 0.5rem + 10vw, 2rem);
 
   h2 {
-    line-height: 1;
     font-family: 'Amatic SC', cursive;
-    font-size: clamp(1.5rem, 0.5rem + 15vw, 5.063rem);
     font-weight: 900;
-    color: ${({ theme }) => theme.color.teal};
+    font-size: clamp(1.5rem, 0.5rem + 15vw, 5.063rem);
+    color: ${({ theme }) => theme.color.title};
+    -webkit-text-stroke: 0.5px ${({ theme }) => theme.color.stroke};
+    text-align: center;
   }
 `;
 
@@ -26,13 +27,17 @@ const Form = styled.form`
   border: 2px solid black;
   border-radius: 10px;
   background-color: ${({ theme }) => theme.color.background};
+  box-shadow: ${({ theme }) => theme.boxShadow.mainShadow};
+  border: 5px solid ${({ theme }) => theme.color.border};
+  border-radius: 10px;
+  border-style: double;
+  padding: clamp(0.2rem, 0.2rem + 1vw, 2rem);
   display: block;
   min-width: 250px;
   width: 100%;
   height: 100%;
   padding: clamp(0.5rem, 0.5rem + 2vw, 2rem);
   max-width: 500px;
-  box-shadow: ${({ theme }) => theme.boxShadow.mainShadow};
 `;
 const Contact = () => {
   /*   const formInitValue = { name: '', email: '', message: '' };
@@ -79,8 +84,7 @@ const Contact = () => {
           label="Full Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          color="white"
-          borderradius="10px 10px 0 0"
+          borderradius="10px 10px 3px 3px"
         />
         <Input
           form
@@ -90,8 +94,7 @@ const Contact = () => {
           label="E-Mail*"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          color="white"
-          borderradius="0 0 0 0"
+          borderradius="3px 3px 3px 3px"
         />
 
         <Input
@@ -103,11 +106,10 @@ const Contact = () => {
           rows={10}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          color="white"
-          borderradius="0 0 10px 10px"
+          borderradius="3px 3px 10px 10px"
         />
 
-        <Button text="Send" type="submit" color="black" background="#6dbae4" />
+        <Button text="Send" type="submit" />
       </Form>
       {emailSent && <span>Thank you for your message, we will be in touch in no time!</span>}
     </Wrap>
