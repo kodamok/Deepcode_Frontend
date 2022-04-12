@@ -81,7 +81,7 @@ const NavMenu = styled.nav`
 `;
 
 const IconsBox = styled.div`
-  max-width: 100px;
+  max-width: 200px;
   display: flex;
   gap: 1rem;
   justify-content: center;
@@ -103,13 +103,14 @@ const LogoMobile = styled.div`
 const MobileMenuContainer = styled.div`
   position: absolute;
   top: 73px;
-  background-color: ${({ theme }) => theme.color.blue};
+  background-color: ${({ theme }) => theme.color.background};
   width: 180px;
   right: 20px;
   height: 40vh;
   margin: 0 auto;
   border-radius: 10px 5px 5px 10px;
   box-shadow: ${({ theme }) => theme.boxShadow.mainShadow};
+  border: 2px solid ${({ theme }) => theme.color.stroke};
   z-index: 100;
 
   animation-name: ${floating1};
@@ -288,6 +289,14 @@ const Header = ({ themeSwitch, isLightTheme }) => {
                 >
                   <FaLinkedin size={40} color="#6dbae4" />
                 </a>
+              </div>
+              <div>
+                <Button
+                  text={isLightTheme === true ? 'Dark' : 'Light'}
+                  onClick={themeSwitch}
+                  height="35px"
+                  width="70px"
+                />
               </div>
             </IconsBox>
             <div onClick={() => handleOpenMenuMobile()}>

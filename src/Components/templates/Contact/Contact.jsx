@@ -83,7 +83,7 @@ const Contact = () => {
           label="Full Name"
           value={name}
           onChange={(e) => setName(e.target.value)}
-          borderradius="10px 10px 0 0"
+          borderradius="10px 10px 3px 3px"
         />
         <Input
           form
@@ -93,7 +93,7 @@ const Contact = () => {
           label="E-Mail*"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          borderradius="0 0 0 0"
+          borderradius="3px 3px 3px 3px"
         />
 
         <Input
@@ -105,7 +105,7 @@ const Contact = () => {
           rows={10}
           value={message}
           onChange={(e) => setMessage(e.target.value)}
-          borderradius="0 0 10px 10px"
+          borderradius="3px 3px 10px 10px"
         />
 
         <Button text="Send" type="submit" />
