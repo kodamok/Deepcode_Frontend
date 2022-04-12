@@ -6,6 +6,7 @@ import useMediaQuery from '../../../hooks/useMediaQuery';
 import { FaGithubSquare } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
 import useOnClickOutside from '../../../hooks/useOnClickOutside';
+import Button from '../../atoms/Button/Button';
 
 const floating1 = keyframes`
   0%,
@@ -60,7 +61,6 @@ const NavMenu = styled.nav`
 
   ul li {
     // border: 2px solid red;
-    color: ${({ theme }) => theme.color.green};
     font-family: 'Amatic SC';
     font-size: ${({ theme }) => theme.fontSizeAmatic.ml};
   }
@@ -83,6 +83,7 @@ const NavMenu = styled.nav`
 const IconsBox = styled.div`
   max-width: 100px;
   display: flex;
+  gap: 1rem;
   justify-content: center;
   align-items: center;
 `;
@@ -185,15 +186,21 @@ const mobileDropMenu = [
   }
 ];
 
-const Header = () => {
+const Header = ({ themeSwitch, isLightTheme }) => {
+  // MOBILE MENU SWITCH
   const [mobileMenu, setMobileMenu] = useState(false);
-  const detectScreen = useMediaQuery('(max-width:720px)');
-  const ref = useRef(null);
-  useOnClickOutside(ref, () => setMobileMenu(false));
-
   const handleOpenMenuMobile = () => {
     setMobileMenu((prev) => !prev);
   };
+
+  //DETECT SCREEN TO CHANGE BETWEEN NAV BARS
+  const detectScreen = useMediaQuery('(max-width:720px)');
+
+  // FUNCTIONALITY FOR CLICKING OUTSIDE AND CLOSE MOBILE MENU
+  const ref = useRef(null);
+  useOnClickOutside(ref, () => setMobileMenu(false));
+
+  console.log(isLightTheme);
 
   return (
     <Wrap>
@@ -226,6 +233,7 @@ const Header = () => {
                 Contact
               </Link>
             </li>
+            <li className="nav-box"></li>
             <li>
               <IconsBox>
                 <div>
@@ -234,7 +242,7 @@ const Header = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <FaGithubSquare size={40} color="#6dbae4" />
+                    <FaGithubSquare size={40} />
                   </a>
                 </div>
 
@@ -244,8 +252,16 @@ const Header = () => {
                     target="_blank"
                     rel="noreferrer"
                   >
-                    <FaLinkedin size={40} color="#6dbae4" />
+                    <FaLinkedin size={40} />
                   </a>
+                </div>
+                <div>
+                  <Button
+                    text={isLightTheme === true ? 'Dark' : 'Light'}
+                    onClick={themeSwitch}
+                    height="35px"
+                    width="70px"
+                  />
                 </div>
               </IconsBox>
             </li>

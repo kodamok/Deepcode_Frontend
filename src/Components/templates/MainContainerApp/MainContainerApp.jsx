@@ -29,7 +29,7 @@ const MainWrap = styled.div`
  */
 // Component which provide Header to Each Page
 
-const MainContainerApp = ({ children }) => {
+const MainContainerApp = ({ children, themeSwitch, isLightTheme }) => {
   /*  const [myError] = useState({
     message: 'This is an Error',
     success: false,
@@ -45,7 +45,7 @@ const MainContainerApp = ({ children }) => {
         />
       )}{' '} */}
       <div className="headerWrap">
-        <Header />
+        <Header themeSwitch={themeSwitch} isLightTheme={isLightTheme} />
       </div>
       <div className="content">{children}</div>
       <div className="footer--pin">

@@ -12,11 +12,11 @@ const Wrap = styled.div`
   padding: clamp(1rem, 0.2rem + 5vw, 2rem);
 
   h2 {
-    line-height: 1;
     font-family: 'Amatic SC', cursive;
-    font-size: clamp(1.5rem, 0.5rem + 15vw, 5.063rem);
     font-weight: 900;
-    color: ${({ theme }) => theme.color.teal};
+    font-size: clamp(1.5rem, 0.5rem + 15vw, 5.063rem);
+    color: ${({ theme }) => theme.color.title};
+    -webkit-text-stroke: 0.5px ${({ theme }) => theme.color.stroke};
     text-align: center;
   }
 `;

@@ -15,7 +15,7 @@ const CircleSignExtraStyle = styled(CircleSign)`
 
 const CirclePhoto = () => {
   return (
-    <CircleSignExtraStyle border="2px solid black" backgroundColor="none">
+    <CircleSignExtraStyle border="2px solid black">
       <img src={caricatura} alt="caricatura" />
     </CircleSignExtraStyle>
   );

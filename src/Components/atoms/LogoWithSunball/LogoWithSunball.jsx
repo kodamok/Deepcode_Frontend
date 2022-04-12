@@ -28,6 +28,8 @@ const NavLogo = styled.div`
   h3 {
     font-family: 'Amatic SC', cursive;
     line-height: 0;
+    color: ${({ theme }) => theme.color.link};
+    -webkit-text-stroke: 0.5px ${({ theme }) => theme.color.stroke};
   }
 
   span {
@@ -35,6 +37,7 @@ const NavLogo = styled.div`
     position: relative;
     font-size: 4rem;
     margin-inline: 0.5rem;
+    -webkit-text-stroke: 0.5px ${({ theme }) => theme.color.stroke};
 
     ::after {
       content: '';
@@ -45,8 +48,8 @@ const NavLogo = styled.div`
       top: 30px;
       left: 7px;
       border-radius: 50%;
-      background-color: ${({ theme }) => theme.color.blue};
-      box-shadow: 0 0 10px 4px ${({ theme }) => theme.color.teal};
+      background-color: ${({ theme }) => theme.color.sunball};
+      box-shadow: 0 0 10px 4px ${({ theme }) => theme.color.shadowBall};
       z-index: 500;
 
       animation-name: ${floating1};

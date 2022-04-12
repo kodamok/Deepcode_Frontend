@@ -144,15 +144,16 @@ const ContainerForm = styled.div`
   width: ${({ width }) => width || '100%'};
 
   input {
-    background: ${({ theme }) => theme.color.blue};
-    font-size: 1rem;
+    background: ${({ theme }) => theme.color.filling};
+    border: none;
+    font-size: 1.2rem;
     max-width: 100%;
     letter-spacing: 1px;
-    padding: 0.5rem;
+    padding: 0.7rem;
     margin: ${({ margin }) => margin || '0 0 1rem 0'};
     border-radius: ${({ borderradius }) => borderradius || '0'};
     &:focus {
-      border-bottom: 2px solid #e76f51;
+      border-bottom: 2px solid ${({ theme }) => theme.color.blue};
       outline: none;
       background: white;
     }
@@ -161,7 +162,7 @@ const ContainerForm = styled.div`
   label {
     font-family: 'Assistant', sans-serif;
     font-weight: 500;
-    color: ${({ color }) => color || 'black'};
+    color: ${({ theme }) => theme.color.text};
   }
 `;
 
@@ -170,10 +171,9 @@ const ContainerTxtArea = styled.div`
   textarea {
     font-family: 'Assistant', sans-serif;
     position: relative;
-    background: ${({ theme }) => theme.color.blue};
+    background: ${({ theme }) => theme.color.filling};
     border: none;
-    border-bottom: 2px solid #001523;
-    font-size: 1em;
+    font-size: 1.2em;
     height: ${({ height }) => height || '100%'};
     transition: border-color 0.3s;
     color: black;
@@ -183,7 +183,7 @@ const ContainerTxtArea = styled.div`
     margin-bottom: ${({ margin }) => margin} || '1rem';
     resize: vertical;
     border-radius: ${({ borderradius }) => borderradius || '0'};
-    padding: 0.5rem;
+    padding: 0.7rem;
 
     &:focus {
       border-bottom: 2px solid #e76f51;
@@ -195,7 +195,7 @@ const ContainerTxtArea = styled.div`
   label {
     font-family: 'Assistant', sans-serif;
     font-weight: 500;
-    color: ${({ color }) => color || 'black'};
+    color: ${({ theme }) => theme.color.text};
   }
 `;
 

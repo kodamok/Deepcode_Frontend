@@ -1,8 +1,8 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './assets/styles/GlobalStyle';
-import { theme } from './assets/styles/theme';
+import { lightTheme, darkTheme } from './assets/styles/theme';
 import 'sanitize.css/sanitize.css';
 import MainContainerApp from './Components/templates/MainContainerApp/MainContainerApp';
 import HomePage from './Components/templates/HomePage/HomePage';
@@ -12,10 +12,16 @@ import Technologies from './Components/templates/Technologies/Technologies';
 import Experience from './Components/templates/Experience/Experience';
 
 const App = () => {
+  let [isLightTheme, toggleTheme] = useState(true);
+
+  const themeSwitch = () => {
+    toggleTheme((isLightTheme = !isLightTheme));
+  };
+
   return (
-    <ThemeProvider theme={theme}>
+    <ThemeProvider theme={!isLightTheme ? lightTheme : darkTheme}>
       <GlobalStyle />
-      <MainContainerApp>
+      <MainContainerApp themeSwitch={themeSwitch} isLightTheme={isLightTheme}>
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/about" element={<About />} />

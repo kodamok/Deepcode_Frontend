@@ -11,10 +11,11 @@ const Wrap = styled.div`
   justify-content: center;
   font-family: 'Amatic SC', cursive;
   padding: 0.5rem;
+  -webkit-text-stroke: 0.5px ${({ theme }) => theme.color.stroke};
 
   > span {
-    color: ${({ theme }) => theme.color.pink};
-    -webkit-text-stroke: 1px black;
+    color: ${({ theme }) => theme.color.link};
+    font-weight: 600;
     font-size: clamp(1.5rem, 0.5rem + 2vw, 11.391rem);
   }
 `;
