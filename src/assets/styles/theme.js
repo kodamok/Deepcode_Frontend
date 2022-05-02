@@ -148,5 +148,23 @@ export const darkTheme = {
   up: (breakpoint) => `@media (min-width: calc(${breakpoint} + 0.02px))`,
   down: (breakpoint) => `@media (max-width: ${breakpoint})`,
   between: (breakpoint, breakpoint2) =>
-    `@media (min-width: calc(${breakpoint} + 0.02px)) and (max-width: ${breakpoint2})`
+    `@media (min-width: calc(${breakpoint} + 0.02px)) and (max-width: ${breakpoint2})`,
+
+  randomColor: () => {
+    const randomColor = [
+      '#783661',
+      '#58A4AC',
+      '#EC7285',
+      '#EC9C72',
+      '#7F9C48',
+      '#944378',
+      '#366178'
+    ];
+    let color;
+    for (let i = 0; i <= randomColor.length; i++) {
+      let randomNum = Math.floor(Math.random() * i);
+      color = randomColor[randomNum];
+    }
+    return color;
+  }
 };

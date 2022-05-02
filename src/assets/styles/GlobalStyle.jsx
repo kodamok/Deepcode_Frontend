@@ -38,7 +38,8 @@ body {
 
 p {
   margin-bottom: 1rem;
-  color: ${({ theme }) => theme.color.text}
+  color: ${({ theme }) => theme.color.text};
+  font-family: 'Assistant', sans-serif;
 }
 
 h1,

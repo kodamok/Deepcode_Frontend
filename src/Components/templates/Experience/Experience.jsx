@@ -1,8 +1,10 @@
 import React from 'react';
 import styled from 'styled-components';
-import NSx512 from '../../../assets/png/NSx512.png';
-import useHover from '../../../hooks/useHover';
-import LinkWithImg from '../../atoms/LinkWithImg/LinkWithImg';
+import nsLogo from '../../../assets/png/nomadStudio/nsLogo.png';
+import landingDesk from '../../../assets/png/nomadStudio/landingDesk.png';
+import landingPhone from '../../../assets/png/nomadStudio/landingPhone.png';
+import { BsLink45Deg } from 'react-icons/bs';
+import { FaGithubSquare } from 'react-icons/fa';
 
 const Wrap = styled.div`
   display: flex;
@@ -21,98 +23,172 @@ const Wrap = styled.div`
   }
 `;
 
-const Container = styled.div`
-  max-width: 500px;
-  min-width: 250px;
-  position: relative;
-  // border: 2px solid red;
+const Grid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(16, 1fr);
+  gap: 1rem;
+
+  .logo {
+    /* border: 2px solid red; */
+    padding: 0;
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-start: 1;
+    grid-row-end: 2;
+  }
+
+  .text {
+    grid-column-start: 3;
+    grid-column-end: 9;
+    grid-row-start: 2;
+    grid-row-end: 3;
+    font-family: 'Assistant', sans-serif;
+  }
+
+  .links {
+    grid-column-start: 7;
+    grid-column-end: 9;
+    grid-row-start: 1;
+    grid-row-end: 2;
+    align-self: center;
+    display: flex;
+  }
+
+  .desk {
+    grid-column-start: 11;
+    grid-column-end: -1;
+    grid-row-start: 1;
+    grid-row-end: 16;
+  }
+  .phone {
+    grid-column-start: 10;
+    grid-column-end: 11;
+    grid-row-start: 1;
+    grid-row-end: 16;
+  }
+
+  .features {
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-start: 3;
+    grid-row-end: 7;
+    text-align: left;
+
+    > h3 {
+      font-family: 'Amatic SC', cursive;
+      color: ${({ theme }) => theme.color.title};
+      margin: 0;
+      text-decoration: underline;
+    }
+
+    > p {
+      margin: 0.5rem;
+    }
+  }
+
+  .tasks {
+    grid-column-start: 3;
+    grid-column-end: 7;
+    grid-row-start: 7;
+    grid-row-end: 11;
+    text-align: left;
+
+    > h3 {
+      font-family: 'Amatic SC', cursive;
+      color: ${({ theme }) => theme.color.title};
+      margin: 0;
+      text-decoration: underline;
+
+      ~ :nth-child(1n) {
+        color: ${({ theme }) => theme.color.color3};
+      }
+    }
+
+    > p {
+      font-family: 'Barrio', cursive;
+      font-size: ${({ theme }) => theme.fontSizeBarrio.m};
+      margin: 0.5rem;
+    }
+  }
+
+  .technologies {
+    grid-column-start: 6;
+    grid-column-end: 10;
+    grid-row-start: 7;
+    grid-row-end: 11;
+    text-align: left;
+    > h3 {
+      font-family: 'Amatic SC', cursive;
+      color: ${({ theme }) => theme.color.title};
+      margin: 0;
+      text-decoration: underline;
+
+      ~ :nth-child(1n) {
+        color: ${({ theme }) => theme.color.color2};
+      }
+    }
+
+    > p {
+      font-family: 'Barrio', cursive;
+      font-size: ${({ theme }) => theme.fontSizeBarrio.m};
+      margin: 0.5rem;
+    }
+  }
 `;
 
-const linkWithImgInfo = {
-  href: 'https://nomad-studio.netlify.app/',
-  imgSrc: NSx512,
-  alt: 'NomadStudio',
-  imgWidth: '215px',
-  underTitle: 'Nomad Studio',
-  description:
-    // eslint-disable-next-line max-len
-    'We met each other in the DCI 1 year web Developement program. We were all coming from different backgrounds but we all had one goal in common: to finish our program an start working as Web Developers. Throughout the year each one found different challenges but at the same time we somehow intertwined helping each other to be better. After the year we had to deliver a Final Project in less than 2 months. This site is that project.'
-};
-
 const Experience = () => {
-  /* const [windowWidth, setWindowWidth] = useState(window.innerWidth);
-  const [mobileFilter, setMobileFilter] = useState(true);
-  console.log(windowWidth, mobileFilter);
-  // OBSERVE WINDOW WIDTH
-
-  useEffect(() => {
-    const updateWindowWidth = () => {
-      const newWidth = window.innerWidth;
-      setWindowWidth(newWidth);
-    };
-    if (windowWidth < 440) {
-      setMobileFilter(false);
-    }
-
-    if (windowWidth > 440) {
-      setMobileFilter(true);
-    }
-    window.addEventListener('resize', updateWindowWidth);
-  }, [windowWidth]);
-
-  const showDescription = (e) => {
-    let p = document.createElement('p');
-
-    p.setAttribute('id', 'hover'); //<p id="hover"></p>
-    p.style.width = `calc(${windowWidth}  / 100vw)`;
-    p.style.position = 'absolute';
-    p.style.top = '0px';
-    p.style.left = '0px';
-    p.style.padding = '1rem';
-    p.style.color = '#eae2b7';
-    p.style.boxShadow =
-      // eslint-disable-next-line max-len
-      '0px 0px 2.2px rgba(0, 0, 0, 0.019), 
-      0px 0px 4.8px rgba(0, 0, 0, 0.028),
-      0px 0px 8.1px rgba(0, 0, 0, 0.034), 
-      0px 0px 12.2px rgba(0, 0, 0, 0.04), 
-      0px 0px 17.7px rgba(0, 0, 0, 0.045), 
-      0px 0px 25px rgba(0, 0, 0, 0.05), 
-      0px 0px 35.4px rgba(0, 0, 0, 0.056), 
-      0px 0px 51.5px rgba(0, 0, 0, 0.062), 
-      0px 0px 79.3px rgba(0, 0, 0, 0.071), 
-      0px 0px 141px rgba(0, 0, 0, 0.09)';
-    p.style.fontFamily = 'Assistant, sans-serif';
-    p.style.visibility = 'visible';
-    p.style.backgroundColor = '#366178';
-    p.style.opacity = '90%';
-    p.style.border = '2px solid black';
-    p.style.borderRadius = '10px';
-    p.style.zIndex = '500';
-    p.innerText = linkWithImgInfo.description;
-    e.target.appendChild(p);
-
-    p.addEventListener('mouseleave', () => {
-      p.style.visibility = 'hidden';
-    });
-  }; */
-
-  //useHover needs to be a child of a position: relative parent
-  //Add the text on the useHover(text) and watch it work and resize
-
-  const { createHover } = useHover(linkWithImgInfo.description);
   return (
     <Wrap>
       <h2>Experience</h2>
-      <Container onMouseEnter={createHover}>
-        <LinkWithImg
-          href={linkWithImgInfo.href}
-          imgSrc={linkWithImgInfo.imgSrc}
-          alt={linkWithImgInfo.alt}
-          imgWidth={linkWithImgInfo.imgWidth}
-          underTitle={linkWithImgInfo.underTitle}
-        />
-      </Container>
+      <Grid>
+        <img className="logo" src={nsLogo} alt="nomad studio Logo" width="350px" />
+
+        <div className="text">
+          <p>
+            Final project of the MERN full-stack web development program at Digital Career Institute
+            gGmbh. I was in charge of the UX Design and Front End side of the project.
+          </p>
+          <p>
+            The project is directed to the micro-management of projects, helping to create a clean
+            workflow between customers and uprising creative freelancers.
+          </p>
+        </div>
+        <div className="links">
+          <a href="https://nomad-studio-netlify.app" target="_blank" rel="noreferrer">
+            <BsLink45Deg size={90} />
+          </a>
+          <a href="https://nomad-studio-netlify.app" target="_blank" rel="noreferrer">
+            <FaGithubSquare size={90} />
+          </a>
+        </div>
+        <img className="desk" src={landingDesk} alt="deskPhoto" width="550px" />
+        <img className="phone" src={landingPhone} alt="phonePhoto" width="157px" />
+        <div className="features">
+          <h3>Features</h3>
+          <p>Login &amp; Signup</p>
+          <p>Create Projects &amp; Contacts</p>
+          <p>Statistics</p>
+          <p>File Transfer</p>
+          <p>PDF Invoice Download</p>
+          <p>Instant Messaging (chatBox) </p>
+          <p>Multilanguage Platform</p>
+          <p>PWA Tecgnology</p>
+        </div>
+        <div className="tasks">
+          <h3>Tasks</h3>
+          <p>UX Design</p>
+          <p>Logo Design</p>
+          <p>Front-end</p>
+        </div>
+        <div className="technologies">
+          <h3>Technologies</h3>
+          <p>Adobe XD</p>
+          <p>Javascript</p>
+          <p>React</p>
+          <p>NodeJs &amp; Express</p>
+          <p>MongoDB &amp; Mongoose</p>
+        </div>
+      </Grid>
     </Wrap>
   );
 };

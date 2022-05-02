@@ -2,10 +2,14 @@ import React from 'react';
 import styled from 'styled-components';
 import CirclePhoto from '../../atoms/CirclePhoto/CirclePhoto';
 import DeepCode from '../../atoms/DeepCode/DeepCode';
+import About from '../About/About';
+import Experience from '../Experience/Experience';
+import Technologies from '../Technologies/Technologies';
 
 const Wrap = styled.div`
   // border: 2px solid blue;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
@@ -36,6 +40,9 @@ const Welcome = () => {
           <DeepCode name1={'DEEP'} name2={'CODE'} />
         </div>
       </WelcomeContainer>
+      <About />
+      <Technologies />
+      <Experience />
     </Wrap>
   );
 };

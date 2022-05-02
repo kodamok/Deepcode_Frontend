@@ -15,6 +15,7 @@ const DeepCodeContainer = styled.div`
     font-size: inherit;
     margin: 0;
     color: ${({ theme }) => theme.color.blue};
+    font-family: 'Amatic SC', cursive;
   }
 
   span {
