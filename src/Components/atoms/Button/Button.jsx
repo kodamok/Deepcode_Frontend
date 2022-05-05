@@ -27,6 +27,29 @@ const ButtonStyle = styled.button`
   }
 `;
 
+const ButtonAlmond = styled.button`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: ${({ padding }) => padding || '0.5rem'};
+  background: ${({ theme, background }) => background || theme.color.filling};
+  font-size: ${({ theme, fontSize }) => fontSize || theme.fontSizeAssistant.ms};
+  border-radius: 1rem;
+  color: ${({ theme, color }) => color || theme.color.teal};
+  border: ${({ border }) => border || '2px solid black'};
+  outline: none;
+  width: ${({ width }) => width || '100%'};
+  height: ${({ height }) => height || '30px'};
+  font-weight: 300;
+  //white-space: nowrap;
+  &:hover {
+    cursor: pointer;
+    background: ${({ theme }) => theme.color.hover};
+    color: ${({ theme }) => theme.color.background};
+    transition: background 0.2s ease-in;
+  }
+`;
+
 const ButtonDrop = styled.div`
   border: 2px solid red;
 
@@ -78,7 +101,8 @@ function Button({
   padding,
   fontSize,
   style,
-  toggle
+  toggle,
+  almond
 }) {
   return (
     <div>
@@ -97,6 +121,22 @@ function Button({
           <input className="checkBox" id="switch" type="checkbox" />
           <label htmlFor="switch" className="toggle"></label>
         </ButtonDrop>
+      ) : almond ? (
+        <ButtonAlmond
+          type={type}
+          color={color}
+          background={background}
+          border={border}
+          onClick={onClick}
+          style={style}
+          width={width}
+          height={height}
+          padding={padding}
+          fontSize={fontSize}
+        >
+          {icon && <span>{icon}</span>}
+          <span>{text}</span>
+        </ButtonAlmond>
       ) : (
         <ButtonStyle
           type={type}

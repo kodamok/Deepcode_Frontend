@@ -80,15 +80,15 @@ h1 {
 }
 
 h2 {
-  font-size: 5.063rem;
+  font-size: clamp(1rem, 0.5rem + 8vw, 5.063rem);
 }
 
 h3 {
-  font-size: 3.375rem;
+  font-size: clamp(1rem, 0.5rem + 8vw, 3.375rem);
 }
 
 h4 {
-  font-size: 2.25rem;
+  font-size: clamp(1rem, 0.5rem + 8vw, 2.25rem);
 }
 
 h5 {
@@ -96,9 +96,9 @@ h5 {
 }
 
 p{
-  font-size: 1.2rem;
+  font-size: clamp(0.667rem, 0.5rem + 2vw, 1.2rem);  
   font-weight: bold;
-  text-align: justify;
+  text-align: left;
 }
 
 small,

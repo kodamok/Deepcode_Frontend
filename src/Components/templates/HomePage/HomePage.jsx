@@ -13,7 +13,7 @@ const Wrap = styled.div`
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
-  padding: clamp(0.5rem, 1rem + 2vw, 2rem);
+  padding: clamp(0.5rem, 0.5rem + 2vw, 2rem);
 `;
 
 const WelcomeContainer = styled.div`
@@ -22,7 +22,7 @@ const WelcomeContainer = styled.div`
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: clamp(0.5rem, 0.5rem + 10vw, 5rem);
+  padding: clamp(0.5rem, 0.5rem + 2vw, 1.5rem);
 
   .roundPhoto {
     padding: 1rem;

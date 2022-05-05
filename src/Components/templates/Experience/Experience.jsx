@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import nsLogo from '../../../assets/png/nomadStudio/nsLogo.png';
 import landingDesk from '../../../assets/png/nomadStudio/landingDesk.png';
 import landingPhone from '../../../assets/png/nomadStudio/landingPhone.png';
+import Button from '../../atoms/Button/Button';
 import { BsLink45Deg } from 'react-icons/bs';
 import { FaGithubSquare } from 'react-icons/fa';
 
@@ -24,114 +25,145 @@ const Wrap = styled.div`
 `;
 
 const Grid = styled.div`
+  /*
+===========================
+  NOMAD STUDIO LAYOUT
+==============================
+*/
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   gap: 1rem;
 
-  .logo {
+  ${({ theme }) => theme.down(theme.breakpoint.sm)} {
+    grid-template-columns: repeat(7, 1fr);
+    gap: 0.5rem;
+  }
+
+  .logoImg {
+    min-width: 175px;
+    max-width: 350px;
+
     /* border: 2px solid red; */
     padding: 0;
-    grid-column-start: 3;
-    grid-column-end: 7;
+    grid-column-start: 2;
+    grid-column-end: 6;
     grid-row-start: 1;
     grid-row-end: 2;
   }
 
   .text {
-    grid-column-start: 3;
-    grid-column-end: 9;
+    grid-column-start: 2;
+    grid-column-end: 7;
     grid-row-start: 2;
     grid-row-end: 3;
     font-family: 'Assistant', sans-serif;
+    padding: 0.2rem;
+
+    > p {
+      text-align: left;
+    }
   }
 
   .links {
-    grid-column-start: 7;
-    grid-column-end: 9;
+    grid-column-start: 6;
+    grid-column-end: 7;
     grid-row-start: 1;
     grid-row-end: 2;
     align-self: center;
     display: flex;
+
+    .chainLink {
+      font-size: clamp(2rem, 0.5rem + 2vw, 15rem);
+      justify-self: center;
+    }
+
+    .githubLink {
+      font-size: clamp(2rem, 0.5rem + 2vw, 15rem);
+    }
   }
 
   .desk {
-    grid-column-start: 11;
-    grid-column-end: -1;
-    grid-row-start: 1;
-    grid-row-end: 16;
+    grid-column-start: 10;
+    grid-column-end: 16;
+    grid-row-start: 2;
+    grid-row-end: 12;
+    max-width: 700px;
+    min-width: 250px;
+    max-height: 450px;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 1rem;
+
+    ${({ theme }) => theme.down(theme.breakpoint.sm)} {
+      grid-column-start: 2;
+      grid-column-end: 7;
+      grid-row-start: 10;
+      grid-row-end: 16;
+      max-width: 250px;
+      min-width: 120px;
+    }
+
+    img {
+      display: block; /*remove inline-block spaces*/
+      width: 100%; /*make image streatch*/
+    }
   }
   .phone {
-    grid-column-start: 10;
-    grid-column-end: 11;
-    grid-row-start: 1;
-    grid-row-end: 16;
+    grid-column-start: 8;
+    grid-column-end: 10;
+    grid-row-start: 2;
+    grid-row-end: 12;
+    max-width: 200px;
+    min-width: 70px;
+    max-height: 450px;
+    overflow: hidden;
+    margin: 0;
+    border-radius: 1rem;
+
+    ${({ theme }) => theme.down(theme.breakpoint.sm)} {
+      grid-column-start: 2;
+      grid-column-end: 7;
+      grid-row-start: 3;
+      grid-row-end: 10;
+      max-width: 250px;
+      min-width: 120px;
+    }
+
+    img {
+      display: block; /*remove inline-block spaces*/
+      width: 100%; /*make image streatch*/
+    }
   }
 
   .features {
-    grid-column-start: 3;
+    grid-column-start: 2;
     grid-column-end: 7;
     grid-row-start: 3;
-    grid-row-end: 7;
-    text-align: left;
+    grid-row-end: 16;
 
-    > h3 {
-      font-family: 'Amatic SC', cursive;
-      color: ${({ theme }) => theme.color.title};
-      margin: 0;
-      text-decoration: underline;
-    }
+    .featureDescription {
+      display: flex;
+      justify-content: left;
+      flex-wrap: wrap;
+      gap: 0.5rem;
 
-    > p {
-      margin: 0.5rem;
-    }
-  }
-
-  .tasks {
-    grid-column-start: 3;
-    grid-column-end: 7;
-    grid-row-start: 7;
-    grid-row-end: 11;
-    text-align: left;
-
-    > h3 {
-      font-family: 'Amatic SC', cursive;
-      color: ${({ theme }) => theme.color.title};
-      margin: 0;
-      text-decoration: underline;
-
-      ~ :nth-child(1n) {
-        color: ${({ theme }) => theme.color.color3};
+      ${({ theme }) => theme.down(theme.breakpoint.m)} {
+        justify-content: center;
       }
     }
 
-    > p {
-      font-family: 'Barrio', cursive;
-      font-size: ${({ theme }) => theme.fontSizeBarrio.m};
-      margin: 0.5rem;
-    }
-  }
-
-  .technologies {
-    grid-column-start: 6;
-    grid-column-end: 10;
-    grid-row-start: 7;
-    grid-row-end: 11;
-    text-align: left;
-    > h3 {
-      font-family: 'Amatic SC', cursive;
-      color: ${({ theme }) => theme.color.title};
-      margin: 0;
-      text-decoration: underline;
-
-      ~ :nth-child(1n) {
-        color: ${({ theme }) => theme.color.color2};
-      }
+    ${({ theme }) => theme.down(theme.breakpoint.m)} {
+      grid-column-start: 2;
+      grid-column-end: 16;
+      grid-row-start: 8;
+      grid-row-end: 16;
     }
 
-    > p {
-      font-family: 'Barrio', cursive;
-      font-size: ${({ theme }) => theme.fontSizeBarrio.m};
-      margin: 0.5rem;
+    ${({ theme }) => theme.down(theme.breakpoint.sm)} {
+      grid-column-start: 2;
+      grid-column-end: 7;
+      grid-row-start: 17;
+      grid-row-end: 18;
     }
   }
 `;
@@ -141,12 +173,15 @@ const Experience = () => {
     <Wrap>
       <h2>Experience</h2>
       <Grid>
-        <img className="logo" src={nsLogo} alt="nomad studio Logo" width="350px" />
+        <div className="logoImg">
+          <img className="logo" src={nsLogo} alt="nomad studio Logo" width="100%" />
+        </div>
 
         <div className="text">
           <p>
             Final project of the MERN full-stack web development program at Digital Career Institute
-            gGmbh. I was in charge of the UX Design and Front End side of the project.
+            gGmbh. I was responsible of the UX Design, logo design and Front End side of the
+            project.
           </p>
           <p>
             The project is directed to the micro-management of projects, helping to create a clean
@@ -155,39 +190,35 @@ const Experience = () => {
         </div>
         <div className="links">
           <a href="https://nomad-studio-netlify.app" target="_blank" rel="noreferrer">
-            <BsLink45Deg size={90} />
+            <BsLink45Deg className="chainLink" />
           </a>
           <a href="https://nomad-studio-netlify.app" target="_blank" rel="noreferrer">
-            <FaGithubSquare size={90} />
+            <FaGithubSquare className="githubLink" />
           </a>
         </div>
-        <img className="desk" src={landingDesk} alt="deskPhoto" width="550px" />
-        <img className="phone" src={landingPhone} alt="phonePhoto" width="157px" />
+        <div className="desk">
+          <img src={landingDesk} alt="deskPhoto" />
+        </div>
+        <div className="phone">
+          <img src={landingPhone} alt="phonePhoto" />
+        </div>
         <div className="features">
-          <h3>Features</h3>
-          <p>Login &amp; Signup</p>
-          <p>Create Projects &amp; Contacts</p>
-          <p>Statistics</p>
-          <p>File Transfer</p>
-          <p>PDF Invoice Download</p>
-          <p>Instant Messaging (chatBox) </p>
-          <p>Multilanguage Platform</p>
-          <p>PWA Tecgnology</p>
+          <div className="featureDescription">
+            <Button almond text="Login" width="auto" />
+            <Button almond text="Signup" width="auto" />
+            <Button almond text="Projects Manager" width="auto" />
+            <Button almond text="Contact Book" width="auto" />
+            <Button almond text="File Transfer" width="auto" />
+            <Button almond text="PDF Invoice Download" width="auto" />
+            <Button almond text="chatBox" width="auto" />
+            <Button almond text="Multilanguage" width="auto" />
+            <Button almond text="PWA Tecgnology" width="auto" />
+            <Button almond text="React" width="auto" background="#A7CE5F" />
+            <Button almond text="AdobeXD" width="auto" background="#A7CE5F" />
+            <Button almond text="Styled Components" width="auto" background="#A7CE5F" />
+          </div>
         </div>
-        <div className="tasks">
-          <h3>Tasks</h3>
-          <p>UX Design</p>
-          <p>Logo Design</p>
-          <p>Front-end</p>
-        </div>
-        <div className="technologies">
-          <h3>Technologies</h3>
-          <p>Adobe XD</p>
-          <p>Javascript</p>
-          <p>React</p>
-          <p>NodeJs &amp; Express</p>
-          <p>MongoDB &amp; Mongoose</p>
-        </div>
+        <div className="technologies"></div>
       </Grid>
     </Wrap>
   );
