@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Button from '../../atoms/Button/Button';
 import { BsLink45Deg } from 'react-icons/bs';
 import { FaGithubSquare } from 'react-icons/fa';
+import { links } from '../../templates/Experience/Experience';
 
 const Grid = styled.div`
   /*
@@ -13,6 +14,7 @@ const Grid = styled.div`
   display: grid;
   grid-template-columns: repeat(16, 1fr);
   gap: 1rem;
+  margin-bottom: 2rem;
 
   ${({ theme }) => theme.down(theme.breakpoint.sm)} {
     grid-template-columns: repeat(7, 1fr);
@@ -25,10 +27,10 @@ const Grid = styled.div`
 
     /* border: 2px solid red; */
     padding: 0;
-    grid-column-start: 2;
-    grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    grid-column-start: ${(links) => links[0].gridLocation[0].logoImg.columnStart};
+    grid-column-end: ${(links) => links[0].gridLocation[0].logoImg.columnEnd};
+    grid-row-start: ${(links) => links[0].gridLocation[0].logoImg.rowStart};
+    grid-row-end: ${(links) => links[0].gridLocation[0].logoImg.rowEnd};
   }
 
   .text {
@@ -150,11 +152,10 @@ const Grid = styled.div`
 
 const Grid4experience = ({ logo, landingDesk, landingPhone, chainLink, gitHubLink, features }) => {
   return (
-    <Grid>
+    <Grid {...links}>
       <div className="logoImg">
         <img className="logo" src={logo} alt="nomad studio Logo" width="100%" />
       </div>
-
       <div className="text">
         <p>
           Final project of the MERN full-stack web development program at Digital Career Institute

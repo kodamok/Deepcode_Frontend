@@ -25,7 +25,7 @@ const Wrap = styled.div`
   }
 `;
 
-const links = [
+export const links = [
   {
     id: 'nomadStudio',
     landingDesk: landingDesk,
@@ -46,6 +46,16 @@ const links = [
       'React',
       'AdobeXD',
       'Styled Components'
+    ],
+    gridLocation: [
+      {
+        logoImg: {
+          columnStart: '2',
+          columnEnd: '6',
+          rowStart: '1',
+          rowEnd: '2'
+        }
+      }
     ]
   },
   {
@@ -70,6 +80,7 @@ const Experience = () => {
         chainLink={links[0].chainLink}
         gitHubLink={links[0].gitHubLink}
         features={links[0].features}
+        gridLocation={links[0].gridLocation}
       />
       <Grid4experience
         logo={links[1].logo}

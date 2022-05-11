@@ -201,8 +201,6 @@ const Header = ({ themeSwitch, isLightTheme }) => {
   const ref = useRef(null);
   useOnClickOutside(ref, () => setMobileMenu(false));
 
-  console.log(isLightTheme);
-
   return (
     <Wrap>
       {detectScreen === false ? (
