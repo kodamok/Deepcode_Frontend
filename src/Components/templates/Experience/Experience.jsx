@@ -1,11 +1,12 @@
 import React from 'react';
 import styled from 'styled-components';
+import Grid4experience from '../../organisms/Grid4experience/Grid4experience';
 import nsLogo from '../../../assets/png/nomadStudio/nsLogo.png';
 import landingDesk from '../../../assets/png/nomadStudio/landingDesk.png';
 import landingPhone from '../../../assets/png/nomadStudio/landingPhone.png';
-import Button from '../../atoms/Button/Button';
-import { BsLink45Deg } from 'react-icons/bs';
-import { FaGithubSquare } from 'react-icons/fa';
+import maynoothLogo from '../../../assets/png/Maynooth/maynoothLogo.png';
+import maynoothDesk from '../../../assets/png/Maynooth/maynoothDesk.jpg';
+import maynoothPhone from '../../../assets/png/Maynooth/maynoothPhone.jpg';
 
 const Wrap = styled.div`
   display: flex;
@@ -24,202 +25,60 @@ const Wrap = styled.div`
   }
 `;
 
-const Grid = styled.div`
-  /*
-===========================
-  NOMAD STUDIO LAYOUT
-==============================
-*/
-  display: grid;
-  grid-template-columns: repeat(16, 1fr);
-  gap: 1rem;
-
-  ${({ theme }) => theme.down(theme.breakpoint.sm)} {
-    grid-template-columns: repeat(7, 1fr);
-    gap: 0.5rem;
+const links = [
+  {
+    id: 'nomadStudio',
+    landingDesk: landingDesk,
+    landingPhone: landingPhone,
+    logo: nsLogo,
+    chainLink: 'https://nomad-studio-netlify.app',
+    gitHubLink: 'https://nomad-studio-netlify.app',
+    features: [
+      'Login',
+      'Signup',
+      'Projects Manager',
+      'Contact Book',
+      'File Transfer',
+      'PDF Invoice Download',
+      'chatBox',
+      'Multilanguage',
+      'PWA Tecgnology',
+      'React',
+      'AdobeXD',
+      'Styled Components'
+    ]
+  },
+  {
+    id: 'maynooth',
+    landingDesk: maynoothDesk,
+    landingPhone: maynoothPhone,
+    logo: maynoothLogo,
+    chainLink: undefined,
+    gitHubLink: undefined,
+    features: ['AdobeXD', 'Logo Design', 'UX/UI Design']
   }
-
-  .logoImg {
-    min-width: 175px;
-    max-width: 350px;
-
-    /* border: 2px solid red; */
-    padding: 0;
-    grid-column-start: 2;
-    grid-column-end: 6;
-    grid-row-start: 1;
-    grid-row-end: 2;
-  }
-
-  .text {
-    grid-column-start: 2;
-    grid-column-end: 7;
-    grid-row-start: 2;
-    grid-row-end: 3;
-    font-family: 'Assistant', sans-serif;
-    padding: 0.2rem;
-
-    > p {
-      text-align: left;
-    }
-  }
-
-  .links {
-    grid-column-start: 6;
-    grid-column-end: 7;
-    grid-row-start: 1;
-    grid-row-end: 2;
-    align-self: center;
-    display: flex;
-
-    .chainLink {
-      font-size: clamp(2rem, 0.5rem + 2vw, 15rem);
-      justify-self: center;
-    }
-
-    .githubLink {
-      font-size: clamp(2rem, 0.5rem + 2vw, 15rem);
-    }
-  }
-
-  .desk {
-    grid-column-start: 10;
-    grid-column-end: 16;
-    grid-row-start: 2;
-    grid-row-end: 12;
-    max-width: 700px;
-    min-width: 250px;
-    max-height: 450px;
-    overflow: hidden;
-    margin: 0;
-    border-radius: 1rem;
-
-    ${({ theme }) => theme.down(theme.breakpoint.sm)} {
-      grid-column-start: 2;
-      grid-column-end: 7;
-      grid-row-start: 10;
-      grid-row-end: 16;
-      max-width: 250px;
-      min-width: 120px;
-    }
-
-    img {
-      display: block; /*remove inline-block spaces*/
-      width: 100%; /*make image streatch*/
-    }
-  }
-  .phone {
-    grid-column-start: 8;
-    grid-column-end: 10;
-    grid-row-start: 2;
-    grid-row-end: 12;
-    max-width: 200px;
-    min-width: 70px;
-    max-height: 450px;
-    overflow: hidden;
-    margin: 0;
-    border-radius: 1rem;
-
-    ${({ theme }) => theme.down(theme.breakpoint.sm)} {
-      grid-column-start: 2;
-      grid-column-end: 7;
-      grid-row-start: 3;
-      grid-row-end: 10;
-      max-width: 250px;
-      min-width: 120px;
-    }
-
-    img {
-      display: block; /*remove inline-block spaces*/
-      width: 100%; /*make image streatch*/
-    }
-  }
-
-  .features {
-    grid-column-start: 2;
-    grid-column-end: 7;
-    grid-row-start: 3;
-    grid-row-end: 16;
-
-    .featureDescription {
-      display: flex;
-      justify-content: left;
-      flex-wrap: wrap;
-      gap: 0.5rem;
-
-      ${({ theme }) => theme.down(theme.breakpoint.m)} {
-        justify-content: center;
-      }
-    }
-
-    ${({ theme }) => theme.down(theme.breakpoint.m)} {
-      grid-column-start: 2;
-      grid-column-end: 16;
-      grid-row-start: 8;
-      grid-row-end: 16;
-    }
-
-    ${({ theme }) => theme.down(theme.breakpoint.sm)} {
-      grid-column-start: 2;
-      grid-column-end: 7;
-      grid-row-start: 17;
-      grid-row-end: 18;
-    }
-  }
-`;
+];
 
 const Experience = () => {
   return (
     <Wrap>
       <h2>Experience</h2>
-      <Grid>
-        <div className="logoImg">
-          <img className="logo" src={nsLogo} alt="nomad studio Logo" width="100%" />
-        </div>
-
-        <div className="text">
-          <p>
-            Final project of the MERN full-stack web development program at Digital Career Institute
-            gGmbh. I was responsible of the UX Design, logo design and Front End side of the
-            project.
-          </p>
-          <p>
-            The project is directed to the micro-management of projects, helping to create a clean
-            workflow between customers and uprising creative freelancers.
-          </p>
-        </div>
-        <div className="links">
-          <a href="https://nomad-studio-netlify.app" target="_blank" rel="noreferrer">
-            <BsLink45Deg className="chainLink" />
-          </a>
-          <a href="https://nomad-studio-netlify.app" target="_blank" rel="noreferrer">
-            <FaGithubSquare className="githubLink" />
-          </a>
-        </div>
-        <div className="desk">
-          <img src={landingDesk} alt="deskPhoto" />
-        </div>
-        <div className="phone">
-          <img src={landingPhone} alt="phonePhoto" />
-        </div>
-        <div className="features">
-          <div className="featureDescription">
-            <Button almond text="Login" width="auto" />
-            <Button almond text="Signup" width="auto" />
-            <Button almond text="Projects Manager" width="auto" />
-            <Button almond text="Contact Book" width="auto" />
-            <Button almond text="File Transfer" width="auto" />
-            <Button almond text="PDF Invoice Download" width="auto" />
-            <Button almond text="chatBox" width="auto" />
-            <Button almond text="Multilanguage" width="auto" />
-            <Button almond text="PWA Tecgnology" width="auto" />
-            <Button almond text="React" width="auto" background="#A7CE5F" />
-            <Button almond text="AdobeXD" width="auto" background="#A7CE5F" />
-            <Button almond text="Styled Components" width="auto" background="#A7CE5F" />
-          </div>
-        </div>
-        <div className="technologies"></div>
-      </Grid>
+      <Grid4experience
+        logo={links[0].logo}
+        landingDesk={links[0].landingDesk}
+        landingPhone={links[0].landingPhone}
+        chainLink={links[0].chainLink}
+        gitHubLink={links[0].gitHubLink}
+        features={links[0].features}
+      />
+      <Grid4experience
+        logo={links[1].logo}
+        landingDesk={links[1].landingDesk}
+        landingPhone={links[1].landingPhone}
+        chainLink={links[1].chainLink}
+        gitHubLink={links[1].gitHubLink}
+        features={links[1].features}
+      />
     </Wrap>
   );
 };
