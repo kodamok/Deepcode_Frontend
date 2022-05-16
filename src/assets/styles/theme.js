@@ -168,3 +168,8 @@ export const darkTheme = {
     return color;
   }
 };
+
+/* grid-column-start: ${(links) => links[0].gridLocation[0].logoImg.columnStart};
+    grid-column-end: ${(links) => links[0].gridLocation[0].logoImg.columnEnd};
+    grid-row-start: ${(links) => links[0].gridLocation[0].logoImg.rowStart};
+    grid-row-end: ${(links) => links[0].gridLocation[0].logoImg.rowEnd}; */

@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Button from '../../atoms/Button/Button';
 import { BsLink45Deg } from 'react-icons/bs';
 import { FaGithubSquare } from 'react-icons/fa';
-import { links } from '../../templates/Experience/Experience';
+//import { links } from '../../templates/Experience/Experience';
 
 const Grid = styled.div`
   /*
@@ -27,17 +27,17 @@ const Grid = styled.div`
 
     /* border: 2px solid red; */
     padding: 0;
-    grid-column-start: ${(links) => links[0].gridLocation[0].logoImg.columnStart};
-    grid-column-end: ${(links) => links[0].gridLocation[0].logoImg.columnEnd};
-    grid-row-start: ${(links) => links[0].gridLocation[0].logoImg.rowStart};
-    grid-row-end: ${(links) => links[0].gridLocation[0].logoImg.rowEnd};
+    grid-column-start: ${(props) => props.grid.logoImg.columnStart};
+    grid-column-end: ${(props) => props.grid.logoImg.columnEnd};
+    grid-row-start: ${(props) => props.grid.logoImg.rowStart};
+    grid-row-end: ${(props) => props.grid.logoImg.rowEnd};
   }
 
   .text {
-    grid-column-start: 2;
-    grid-column-end: 7;
-    grid-row-start: 2;
-    grid-row-end: 3;
+    grid-column-start: ${(props) => props.grid.text.columnStart};
+    grid-column-end: ${(props) => props.grid.text.columnEnd};
+    grid-row-start: ${(props) => props.grid.text.rowStart};
+    grid-row-end: ${(props) => props.grid.text.rowEnd};
     font-family: 'Assistant', sans-serif;
     padding: 0.2rem;
 
@@ -47,10 +47,10 @@ const Grid = styled.div`
   }
 
   .links {
-    grid-column-start: 6;
-    grid-column-end: 7;
-    grid-row-start: 1;
-    grid-row-end: 2;
+    grid-column-start: ${(props) => props.grid.links.columnStart};
+    grid-column-end: ${(props) => props.grid.links.columnEnd};
+    grid-row-start: ${(props) => props.grid.links.rowStart};
+    grid-row-end: ${(props) => props.grid.links.rowEnd};
     align-self: center;
     display: flex;
 
@@ -65,10 +65,10 @@ const Grid = styled.div`
   }
 
   .desk {
-    grid-column-start: 10;
-    grid-column-end: 16;
-    grid-row-start: 2;
-    grid-row-end: 12;
+    grid-column-start: ${(props) => props.grid.desktopPhoto.columnStart};
+    grid-column-end: ${(props) => props.grid.desktopPhoto.columnEnd};
+    grid-row-start: ${(props) => props.grid.desktopPhoto.rowStart};
+    grid-row-end: ${(props) => props.grid.desktopPhoto.rowEnd};
     max-width: 700px;
     min-width: 250px;
     max-height: 450px;
@@ -91,10 +91,10 @@ const Grid = styled.div`
     }
   }
   .phone {
-    grid-column-start: 8;
-    grid-column-end: 10;
-    grid-row-start: 2;
-    grid-row-end: 12;
+    grid-column-start: ${(props) => props.grid.phonePhoto.columnStart};
+    grid-column-end: ${(props) => props.grid.phonePhoto.columnEnd};
+    grid-row-start: ${(props) => props.grid.phonePhoto.rowStart};
+    grid-row-end: ${(props) => props.grid.phonePhoto.rowEnd};
     max-width: 200px;
     min-width: 70px;
     max-height: 450px;
@@ -118,10 +118,10 @@ const Grid = styled.div`
   }
 
   .features {
-    grid-column-start: 2;
-    grid-column-end: 7;
-    grid-row-start: 5;
-    grid-row-end: 16;
+    grid-column-start: ${(props) => props.grid.almondButtons.columnStart};
+    grid-column-end: ${(props) => props.grid.almondButtons.columnEnd};
+    grid-row-start: ${(props) => props.grid.almondButtons.rowStart};
+    grid-row-end: ${(props) => props.grid.almondButtons.rowEnd};
 
     .featureDescription {
       display: flex;
@@ -150,21 +150,25 @@ const Grid = styled.div`
   }
 `;
 
-const Grid4experience = ({ logo, landingDesk, landingPhone, chainLink, gitHubLink, features }) => {
+const Grid4experience = ({
+  locationGrid,
+  logo,
+  landingDesk,
+  landingPhone,
+  chainLink,
+  gitHubLink,
+  description,
+  features
+}) => {
+  //const grid = { logoImg: { columnStart: '2', columnEnd: '6', rowStart: '1', rowEnd: '2' } };
+  console.log(locationGrid);
   return (
-    <Grid {...links}>
+    <Grid grid={locationGrid}>
       <div className="logoImg">
         <img className="logo" src={logo} alt="nomad studio Logo" width="100%" />
       </div>
       <div className="text">
-        <p>
-          Final project of the MERN full-stack web development program at Digital Career Institute
-          gGmbh. I was responsible of the UX Design, logo design and Front End side of the project.
-        </p>
-        <p>
-          The project is directed to the micro-management of projects, helping to create a clean
-          workflow between customers and uprising creative freelancers.
-        </p>
+        <p>{description}</p>
       </div>
       <div className="links">
         <a href={chainLink} target="_blank" rel="noreferrer">
