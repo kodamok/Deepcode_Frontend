@@ -36,7 +36,7 @@ const linkWithImgInfo = {
   underTitle: 'Nomad Studio',
   description:
     // eslint-disable-next-line max-len
-    'We met each other in the DCI 1 year web Developement program. We were all coming from different backgrounds but we all had one goal in common: to finish our program an start working as Web Developers. Throughout the year each one found different challenges but at the same time we somehow intertwined helping each other to be better. After the year we had to deliver a Final Project in less than 2 months. This site is that project.'
+    'Final project of the MERN full-stack web development program at Digital Career Institute gGmbh. I was responsible of the UX Design, logo design and Front End side of the project.  The project is directed to the micro-management of projects, helping to create a clean workflow between customers and uprising creative freelancers.'
 };
 
 const Experience = () => {
