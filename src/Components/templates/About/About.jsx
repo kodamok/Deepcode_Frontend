@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+const emoji = require('node-emoji');
 
 // import curriculum from '../../../assets/files/curriculum.svg';
 
@@ -19,9 +20,10 @@ const Wrap = styled.div`
 `;
 
 const IntroText = styled.div`
-  max-width: 50ch;
+  max-width: 70ch;
   display: flex;
   justify-content: center;
+  flex-direction: column;
   border: 5px solid ${({ theme }) => theme.color.border};
   border-radius: 10px;
   border-style: double;
@@ -82,13 +84,33 @@ const About = () => {
       <h2>About Me</h2>
       <IntroText>
         <p>
-          My name is David Rabinovich and I am a MERN Fullstack developer. I have started to work as
-          a developer 10 years ago when Flash Player was a thing. After an 8 month course I landed
-          my first job as a Web - Developer for a small company in my home town. I was really
-          excited! Although my plans changed and I ended up learning Music Production, singing and
-          performing arts for the next 10 years, I never abandoned the passion and curiosity for
-          coding and designing websites. Currently I finished the DCI (Digital Career Institute)
-          MERN program and I am looking for a serious company to help me start this new journey!
+          Hi my name is David Rabinovich, and I am the person people usually come to when they need
+          some advice and/or emotional support...why? <br /> well{' '}
+          <span>
+            I've immigrated 3 times, I speak 5 languages and I have a strong interest in psychology
+            and personal developement so communication, adaptation and emotional intelligence come
+            natural to me. {emoji.get('smile')}
+          </span>
+        </p>
+        <p>
+          I dedicated myself to music production as well as performance arts for the past 10 years
+          and so far I learned how to sing, play guitar, bass, mix &amp; master music, make logos
+          and edit videos.
+          <br />
+          <span>I'm an out of the box nerd! {emoji.get('see_no_evil')}</span>
+        </p>
+        <p>
+          Web developement is not new to me, I've worked as front end developer 10 years ago for a
+          short period of time with technologies like Adobe Flash, Javascript, Css and HTML.{' '}
+          <span>
+            Recently I extended/updated my knowledge learning UX/UI Design together with few on-line
+            marketing tools through Udemy as well as Javascript, React and nodejs, HTML and CSS
+            while simultanously being the tutor and representative of my class{' '}
+          </span>
+          at{' '}
+          <a href="https://digitalcareerinstitute.org/" target="_blank" rel="noreferrer">
+            Digital Career Institute gGmbH.
+          </a>
         </p>
       </IntroText>
 
