@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import Grid4experience from '../../organisms/Grid4experience/Grid4experience';
+import Grid4experience from '../../molecules/Grid4experience/Grid4experience';
 import nsLogo from '../../../assets/png/nomadStudio/nsLogo.png';
 import landingDesk from '../../../assets/png/nomadStudio/landingDesk.png';
 import landingPhone from '../../../assets/png/nomadStudio/landingPhone.png';
@@ -69,20 +69,20 @@ const locationGrid = [
   {
     right: {
       logoImg: {
-        columnStart: '10',
-        columnEnd: '16',
+        columnStart: '11',
+        columnEnd: '15',
         rowStart: '1',
         rowEnd: '2'
       },
       text: {
-        columnStart: '10',
-        columnEnd: '15',
+        columnStart: '11',
+        columnEnd: '16',
         rowStart: '2',
         rowEnd: '3'
       },
       links: {
         columnStart: '15',
-        columnEnd: '17',
+        columnEnd: '16',
         rowStart: '1',
         rowEnd: '2'
       },
@@ -99,7 +99,7 @@ const locationGrid = [
         rowEnd: '12'
       },
       almondButtons: {
-        columnStart: '10',
+        columnStart: '11',
         columnEnd: '16',
         rowStart: '5',
         rowEnd: '16'
@@ -142,6 +142,9 @@ const Experience = () => {
       logo: maynoothLogo,
       chainLink: undefined,
       gitHubLink: undefined,
+      // eslint-disable-next-line max-len
+      description:
+        'Part of my UX/UI Design final project which I made through the platform Udemy. The description of the exercise was to create a Home page, Product Page with examples and Item Description using a Persona description. In this course I made the whole UX/UI Design of the project together with the logo vector using Adobe XD.',
       features: ['AdobeXD', 'Logo Design', 'UX/UI Design']
     }
   ];
@@ -167,7 +170,7 @@ const Experience = () => {
         landingPhone={links[1].landingPhone}
         chainLink={links[1].chainLink}
         gitHubLink={links[1].gitHubLink}
-        description={links[0].description}
+        description={links[1].description}
         features={links[1].features}
         locationGrid={locationGrid[1].right}
 

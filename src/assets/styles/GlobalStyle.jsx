@@ -22,6 +22,8 @@ export const GlobalStyle = createGlobalStyle`
 
 html {
   font-size: 100%;
+  scroll-behavior: smooth;
+
 }
 
 /*16px*/
@@ -34,6 +36,7 @@ body {
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
   line-height: 1.45;
+  
 }
 
 p {

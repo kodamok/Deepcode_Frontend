@@ -129,7 +129,7 @@ export const darkTheme = {
   },
   breakpoint: {
     s: '440px',
-    sm: '740px',
+    sm: '720px',
     m: '1060px',
     l: '1440px'
   },

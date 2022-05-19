@@ -19,10 +19,11 @@ const Grid = styled.div`
   ${({ theme }) => theme.down(theme.breakpoint.sm)} {
     grid-template-columns: repeat(7, 1fr);
     gap: 0.5rem;
+    justify-items: center;
   }
 
   .logoImg {
-    min-width: 175px;
+    min-width: 200px;
     max-width: 350px;
 
     /* border: 2px solid red; */
@@ -31,6 +32,13 @@ const Grid = styled.div`
     grid-column-end: ${(props) => props.grid.logoImg.columnEnd};
     grid-row-start: ${(props) => props.grid.logoImg.rowStart};
     grid-row-end: ${(props) => props.grid.logoImg.rowEnd};
+
+    ${({ theme }) => theme.down(theme.breakpoint.sm)} {
+      grid-column-start: 2;
+      grid-column-end: 6;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
   }
 
   .text {
@@ -44,6 +52,19 @@ const Grid = styled.div`
     > p {
       text-align: left;
     }
+
+    ${({ theme }) => theme.down(theme.breakpoint.sm)} {
+      grid-column-start: 2;
+      grid-column-end: 7;
+      grid-row-start: 2;
+      grid-row-end: 3;
+      max-width: 250px;
+      min-width: 120px;
+
+      p {
+        text-align: center;
+      }
+    }
   }
 
   .links {
@@ -53,6 +74,15 @@ const Grid = styled.div`
     grid-row-end: ${(props) => props.grid.links.rowEnd};
     align-self: center;
     display: flex;
+    max-width: 250px;
+    min-width: 80px;
+
+    ${({ theme }) => theme.down(theme.breakpoint.sm)} {
+      grid-column-start: 6;
+      grid-column-end: 7;
+      grid-row-start: 1;
+      grid-row-end: 2;
+    }
 
     .chainLink {
       font-size: clamp(2rem, 0.5rem + 2vw, 15rem);
@@ -95,6 +125,7 @@ const Grid = styled.div`
     grid-column-end: ${(props) => props.grid.phonePhoto.columnEnd};
     grid-row-start: ${(props) => props.grid.phonePhoto.rowStart};
     grid-row-end: ${(props) => props.grid.phonePhoto.rowEnd};
+
     max-width: 200px;
     min-width: 70px;
     max-height: 450px;
@@ -113,7 +144,7 @@ const Grid = styled.div`
 
     img {
       display: block; /*remove inline-block spaces*/
-      width: 100%; /*make image streatch*/
+      width: 100%; /*make image stretch*/
     }
   }
 

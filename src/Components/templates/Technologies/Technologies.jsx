@@ -19,6 +19,7 @@ const Wrap = styled.div`
   // border: 2px solid red;
   width: 100%;
   padding: clamp(0rem, 0.2rem + 1vw, 2rem);
+  min-height: 80vh;
 `;
 
 const FlexContainer = styled.div`

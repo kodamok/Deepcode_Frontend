@@ -5,6 +5,7 @@ import DeepCode from '../../atoms/DeepCode/DeepCode';
 import About from '../About/About';
 import Experience from '../Experience/Experience';
 import Technologies from '../Technologies/Technologies';
+import BackToTop from '../../atoms/BackToTop/BackToTop';
 
 const Wrap = styled.div`
   // border: 2px solid blue;
@@ -23,6 +24,7 @@ const WelcomeContainer = styled.div`
   justify-content: center;
   align-items: center;
   padding: clamp(0.5rem, 0.5rem + 2vw, 1.5rem);
+  min-height: 80vh;
 
   .roundPhoto {
     padding: 1rem;
@@ -43,6 +45,9 @@ const Welcome = () => {
       <About />
       <Technologies />
       <Experience />
+      <a href="#top">
+        <BackToTop />
+      </a>
     </Wrap>
   );
 };
