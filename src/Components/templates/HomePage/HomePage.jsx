@@ -6,6 +6,7 @@ import About from '../About/About';
 import Experience from '../Experience/Experience';
 import Technologies from '../Technologies/Technologies';
 import BackToTop from '../../atoms/BackToTop/BackToTop';
+import Contact from '../Contact/Contact';
 
 const Wrap = styled.div`
   // border: 2px solid blue;
@@ -45,6 +46,7 @@ const Welcome = () => {
       <About />
       <Technologies />
       <Experience />
+      <Contact />
       <a href="#top">
         <BackToTop />
       </a>

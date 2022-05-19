@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import Logo from '../../atoms/Logo/Logo';
@@ -190,6 +190,7 @@ const mobileDropMenu = [
 const Header = ({ themeSwitch, isLightTheme }) => {
   // MOBILE MENU SWITCH
   const [mobileMenu, setMobileMenu] = useState(false);
+
   const handleOpenMenuMobile = () => {
     setMobileMenu((prev) => !prev);
   };

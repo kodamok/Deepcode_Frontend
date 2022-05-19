@@ -90,7 +90,7 @@ const About = () => {
       <IntroText>
         <p>
           Hi my name is David Rabinovich, and I am the person people usually come to when they need
-          some advice and/or emotional support, why, well{' '}
+          some advice and/or emotional support...why? <br /> well{' '}
           <span>
             I've immigrated 3 times, I speak 5 languages and I have a strong interest in psychology
             and personal developement so communication, adaptation and emotional intelligence come
@@ -98,18 +98,19 @@ const About = () => {
           </span>
         </p>
         <p>
-          I dedicated myself to music production as well as performance arts; art for the past 10
-          years and so far I learned how to sing, play guitar, bass, mix &amp; master music, to make
-          logos and edit videos.
+          I dedicated myself to music production as well as performance arts for the past 10 years
+          and so far I learned how to sing, play guitar, bass, mix &amp; master music, make logos
+          and edit videos.
           <br />
-          <span>I'm a nerd! {emoji.get('see_no_evil')}</span>
+          <span>I'm an out of the box nerd! {emoji.get('see_no_evil')}</span>
         </p>
         <p>
           Web developement is not new to me, I've worked as front end developer 10 years ago for a
-          short period of time and{' '}
+          short period of time with technologies like Adobe Flash, Javascript, Css and HTML.{' '}
           <span>
-            I have recently extended my knowledge learning javascript react and nodejs in less than
-            6 month while simultanously being the tutor and representative of my class{' '}
+            Recently I extended/updated my knowledge learning UX/UI Design together with few on-line
+            marketing tools through Udemy as well as Javascript, React and nodejs, HTML and CSS
+            while simultanously being the tutor and representative of my class{' '}
           </span>
           at{' '}
           <a href="https://digitalcareerinstitute.org/" target="_blank" rel="noreferrer">

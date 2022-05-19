@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import Button from '../../atoms/Button/Button';
 import { BsLink45Deg } from 'react-icons/bs';
 import { FaGithubSquare } from 'react-icons/fa';
+//import Modal from '../Modal/Modal';
 //import { links } from '../../templates/Experience/Experience';
 
 const Grid = styled.div`
@@ -191,8 +192,8 @@ const Grid4experience = ({
   description,
   features
 }) => {
+  //const [isOpen, setIsOpen] = useState(false);
   //const grid = { logoImg: { columnStart: '2', columnEnd: '6', rowStart: '1', rowEnd: '2' } };
-  console.log(locationGrid);
   return (
     <Grid grid={locationGrid}>
       <div className="logoImg">
@@ -210,10 +211,14 @@ const Grid4experience = ({
         </a>
       </div>
       <div className="desk">
-        <img src={landingDesk} alt="deskPhoto" />
+        <a href={landingDesk} target="_blank" rel="noreferrer">
+          <img src={landingDesk} alt="deskPhoto" />
+        </a>
       </div>
       <div className="phone">
-        <img src={landingPhone} alt="phonePhoto" />
+        <a href={landingPhone} target="_blank" rel="noreferrer">
+          <img src={landingPhone} alt="phonePhoto" />
+        </a>
       </div>
       <div className="features">
         <div className="featureDescription">
