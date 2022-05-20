@@ -147,7 +147,8 @@ const ContainerForm = styled.div`
     background: ${({ theme }) => theme.color.filling};
     border: none;
     font-size: 1.2rem;
-    max-width: 100%;
+    max-width: 500px;
+    min-width: 150px;
     letter-spacing: 1px;
     padding: 0.7rem;
     margin: ${({ margin }) => margin || '0 0 1rem 0'};
@@ -177,8 +178,9 @@ const ContainerTxtArea = styled.div`
     height: ${({ height }) => height || '100%'};
     transition: border-color 0.3s;
     color: black;
-    max-width: 100%;
-
+    max-width: 500px;
+    min-width: 150px;
+    width: 100%;
     letter-spacing: 1px;
     margin-bottom: ${({ margin }) => margin} || '1rem';
     resize: vertical;

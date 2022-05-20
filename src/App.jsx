@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import { ThemeProvider } from 'styled-components';
 import { GlobalStyle } from './assets/styles/GlobalStyle';
 import { lightTheme, darkTheme } from './assets/styles/theme';
+//import { HashLink as Link } from 'react-router-hash-link';
 import 'sanitize.css/sanitize.css';
 import MainContainerApp from './Components/templates/MainContainerApp/MainContainerApp';
 import HomePage from './Components/templates/HomePage/HomePage';

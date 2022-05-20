@@ -1,6 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
-const emoji = require('node-emoji');
+
+import curriculum from '../../../assets/files/curriculum.pdf';
+let emoji = require('node-emoji');
+
 
 // import curriculum from '../../../assets/files/curriculum.svg';
 
@@ -9,6 +12,7 @@ const Wrap = styled.div`
   flex-direction: column;
   align-items: center;
   padding: clamp(0.5rem, 0.5rem + 10vw, 1rem);
+  min-height: 80vh;
 
   h2 {
     font-family: 'Amatic SC', cursive;
@@ -22,19 +26,29 @@ const Wrap = styled.div`
 const IntroText = styled.div`
   max-width: 70ch;
   display: flex;
-  justify-content: center;
   flex-direction: column;
-  border: 5px solid ${({ theme }) => theme.color.border};
+  justify-content: center;
+
+  //border: 2px solid ${({ theme }) => theme.color.border};
+
   border-radius: 10px;
-  border-style: double;
+  //border-style: double;
   background-color: ${({ theme }) => theme.color.background};
   padding: clamp(0.5rem, 0.5rem + 3vw, 2rem);
-  box-shadow: ${({ theme }) => theme.boxShadow.mainShadow};
+  //box-shadow: ${({ theme }) => theme.boxShadow.mainShadow};
+
+  & > :nth-child(4) {
+    text-align: center;
+  }
 
   p {
     color: ${({ theme }) => theme.color.cream};
     font-size: clamp(1rem, 0.1rem + 5vw, 1.2rem);
     text-align: left;
+
+    > span {
+      color: ${({ theme }) => theme.color.color3};
+    }
   }
 `;
 
@@ -85,7 +99,9 @@ const About = () => {
       <IntroText>
         <p>
           Hi my name is David Rabinovich, and I am the person people usually come to when they need
-          some advice and/or emotional support...why? <br /> well{' '}
+
+          some advice and/or emotional support...why? <br /> well,{' '}
+
           <span>
             I've immigrated 3 times, I speak 5 languages and I have a strong interest in psychology
             and personal developement so communication, adaptation and emotional intelligence come
@@ -93,11 +109,15 @@ const About = () => {
           </span>
         </p>
         <p>
-          I dedicated myself to music production as well as performance arts for the past 10 years
-          and so far I learned how to sing, play guitar, bass, mix &amp; master music, make logos
-          and edit videos.
+
+          <span>
+            I studied sound at the Microfusa School In Barcelona and specialized in studio
+            recording.
+          </span>{' '}
+          For the past 10 years I dedicated myself to music &amp; sound production as well as
+          performance arts.
           <br />
-          <span>I'm an out of the box nerd! {emoji.get('see_no_evil')}</span>
+
         </p>
         <p>
           Web developement is not new to me, I've worked as front end developer 10 years ago for a
@@ -111,6 +131,13 @@ const About = () => {
           <a href="https://digitalcareerinstitute.org/" target="_blank" rel="noreferrer">
             Digital Career Institute gGmbH.
           </a>
+
+        </p>
+        <p>
+          <a href={curriculum} target="_blank" rel="noreferrer">
+            {emoji.get('point_right')} RESUME {emoji.get('point_left')}
+          </a>
+
         </p>
       </IntroText>
 

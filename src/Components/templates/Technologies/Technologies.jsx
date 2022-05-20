@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
+
 /* import {
   SiJavascript,
   SiReact,
@@ -19,6 +20,7 @@ const Wrap = styled.div`
   // border: 2px solid red;
   width: 100%;
   padding: clamp(0rem, 0.2rem + 1vw, 2rem);
+  min-height: 80vh;
 `;
 
 const FlexContainer = styled.div`
@@ -44,9 +46,9 @@ const Flex = styled.div`
   justify-content: center;
   background-color: ${({ theme }) => theme.color.background};
   box-shadow: ${({ theme }) => theme.boxShadow.mainShadow};
-  border: 5px solid ${({ theme }) => theme.color.border};
+  border: 2px solid ${({ theme }) => theme.color.border};
   border-radius: 10px;
-  border-style: double;
+  //border-style: double;
   padding: clamp(0.2rem, 0.2rem + 1vw, 2rem);
   max-width: 500px;
   min-width: 300px;
@@ -172,28 +174,10 @@ const Flex = styled.div`
 `;
 
 const Technologies = () => {
-  /* const randomColorYes = () => {
-    const randomColor = [
-      '#783661',
-      '#58A4AC',
-      '#EC7285',
-      '#EC9C72',
-      '#7F9C48',
-      '#944378',
-      '#366178'
-    ];
-    let color;
-    for (let i = 0; i <= randomColor.length; i++) {
-      let randomNum = Math.floor(Math.random() * i);
-      color = randomColor[randomNum];
-    }
-    return color;
-  }; */
-
   return (
     <Wrap>
       <FlexContainer>
-        <h2>Technologies</h2>
+        <h2 id="tech">Technologies</h2>
         <Flex>
           <div className="box1">
             <h3>UXDesign</h3>

@@ -12,6 +12,9 @@ const Wrap = styled.div`
   justify-content: center;
   align-items: center;
   padding: clamp(0.5rem, 0.5rem + 10vw, 2rem);
+  width: 100%;
+  max-width: 700px;
+  min-width: 150px;
 
   h2 {
     font-family: 'Amatic SC', cursive;
@@ -28,9 +31,9 @@ const Form = styled.form`
   border-radius: 10px;
   background-color: ${({ theme }) => theme.color.background};
   box-shadow: ${({ theme }) => theme.boxShadow.mainShadow};
-  border: 5px solid ${({ theme }) => theme.color.border};
+  border: 2px solid ${({ theme }) => theme.color.border};
   border-radius: 10px;
-  border-style: double;
+  //border-style: double;
   padding: clamp(0.2rem, 0.2rem + 1vw, 2rem);
   display: block;
   min-width: 250px;

@@ -1,4 +1,4 @@
-import React, { useState, useRef } from 'react';
+import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
 import { Link } from 'react-router-dom';
 import Logo from '../../atoms/Logo/Logo';
@@ -8,7 +8,7 @@ import { FaLinkedin } from 'react-icons/fa';
 import useOnClickOutside from '../../../hooks/useOnClickOutside';
 import Button from '../../atoms/Button/Button';
 
-const floating1 = keyframes`
+/* const floating1 = keyframes`
   0%,
   100% {
     transform: translateY(0);
@@ -17,7 +17,7 @@ const floating1 = keyframes`
   50% {
     transform: translateY(2px);
   }
-`;
+`; */
 
 const floating2 = keyframes`
   0%,
@@ -45,7 +45,7 @@ const NavMenu = styled.nav`
   justify-content: space-around;
   flex-wrap: wrap;
   width: 100%;
-  padding: clamp(0.5rem, 0.1rem + 2vw, 0.5rem);
+  padding: clamp(0.5rem, 0.1rem + 2vw, 1.5rem);
   // border-bottom: 1px solid #366178;
   /* border:1px solid red; */
 
@@ -100,7 +100,7 @@ const LogoMobile = styled.div`
   // border: 2px solid red;
 `;
 
-const MobileMenuContainer = styled.div`
+/* const MobileMenuContainer = styled.div`
   position: absolute;
   top: 73px;
   background-color: ${({ theme }) => theme.color.background};
@@ -119,7 +119,7 @@ const MobileMenuContainer = styled.div`
   animation-timing-function: ease-in-out;
   animation-iteration-count: infinite;
   animation-delay: 0.1s;
-`;
+`; */
 
 const MobileMenu = styled.div`
   position: relative;
@@ -164,7 +164,7 @@ const MobileMenu = styled.div`
   }
 `;
 
-const mobileDropMenu = [
+/* const mobileDropMenu = [
   {
     id: 1,
     name: 'Who am I',
@@ -185,11 +185,12 @@ const mobileDropMenu = [
     name: 'Contact',
     path: '/contact'
   }
-];
+]; */
 
 const Header = ({ themeSwitch, isLightTheme }) => {
   // MOBILE MENU SWITCH
   const [mobileMenu, setMobileMenu] = useState(false);
+
   const handleOpenMenuMobile = () => {
     setMobileMenu((prev) => !prev);
   };
@@ -200,8 +201,6 @@ const Header = ({ themeSwitch, isLightTheme }) => {
   // FUNCTIONALITY FOR CLICKING OUTSIDE AND CLOSE MOBILE MENU
   const ref = useRef(null);
   useOnClickOutside(ref, () => setMobileMenu(false));
-
-  console.log(isLightTheme);
 
   return (
     <Wrap>
@@ -214,7 +213,7 @@ const Header = ({ themeSwitch, isLightTheme }) => {
           </div>
 
           <ul>
-            <li className="nav-box">
+            {/* <li className="nav-box">
               <Link to="/about" className="link">
                 Who am I
               </Link>
@@ -233,8 +232,8 @@ const Header = ({ themeSwitch, isLightTheme }) => {
               <Link to="/contact" className="link">
                 Contact
               </Link>
-            </li>
-            <li className="nav-box"></li>
+            </li> */}
+
             <li>
               <IconsBox>
                 <div>
@@ -304,8 +303,9 @@ const Header = ({ themeSwitch, isLightTheme }) => {
             </div>
           </LogoMobile>
 
-          {mobileMenu && (
-            <MobileMenuContainer ref={ref}>
+          {mobileMenu &&
+            {
+              /* <MobileMenuContainer ref={ref}>
               <ul>
                 {mobileDropMenu.map((item) => (
                   <li className="nav-box" key={item.id}>
@@ -315,8 +315,8 @@ const Header = ({ themeSwitch, isLightTheme }) => {
                   </li>
                 ))}
               </ul>
-            </MobileMenuContainer>
-          )}
+            </MobileMenuContainer> */
+            }}
         </MobileMenu>
       )}
     </Wrap>
