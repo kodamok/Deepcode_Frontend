@@ -150,7 +150,7 @@ const Experience = () => {
     }
   ];
   //const grid = { logoImg: { columnStart: '2', columnEnd: '6', rowStart: '1', rowEnd: '2' } };
-=======
+
 const Container = styled.div`
   max-width: 500px;
   min-width: 250px;
