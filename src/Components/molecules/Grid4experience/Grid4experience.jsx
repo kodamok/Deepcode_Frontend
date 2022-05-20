@@ -76,7 +76,7 @@ const Grid = styled.div`
     align-self: center;
     display: flex;
     max-width: 250px;
-    min-width: 80px;
+    min-width: 50px;
 
     ${({ theme }) => theme.down(theme.breakpoint.sm)} {
       grid-column-start: 6;

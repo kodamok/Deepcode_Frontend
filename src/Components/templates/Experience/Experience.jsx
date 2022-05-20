@@ -13,7 +13,7 @@ const Wrap = styled.div`
   justify-content: center;
   flex-direction: column;
   align-items: center;
-  padding: clamp(1rem, 0.2rem + 5vw, 2rem);
+  padding: clamp(0rem, 0.2rem + 1vw, 2rem);
 
   h2 {
     font-family: 'Amatic SC', cursive;

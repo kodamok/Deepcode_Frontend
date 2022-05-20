@@ -12,6 +12,9 @@ const Wrap = styled.div`
   justify-content: center;
   align-items: center;
   padding: clamp(0.5rem, 0.5rem + 10vw, 2rem);
+  width: 100%;
+  max-width: 700px;
+  min-width: 150px;
 
   h2 {
     font-family: 'Amatic SC', cursive;
