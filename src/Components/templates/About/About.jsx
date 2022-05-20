@@ -1,7 +1,9 @@
 import React from 'react';
 import styled from 'styled-components';
+
 import curriculum from '../../../assets/files/curriculum.pdf';
 let emoji = require('node-emoji');
+
 
 // import curriculum from '../../../assets/files/curriculum.svg';
 
@@ -26,7 +28,9 @@ const IntroText = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: center;
+
   //border: 2px solid ${({ theme }) => theme.color.border};
+
   border-radius: 10px;
   //border-style: double;
   background-color: ${({ theme }) => theme.color.background};
@@ -95,7 +99,9 @@ const About = () => {
       <IntroText>
         <p>
           Hi my name is David Rabinovich, and I am the person people usually come to when they need
+
           some advice and/or emotional support...why? <br /> well,{' '}
+
           <span>
             I've immigrated 3 times, I speak 5 languages and I have a strong interest in psychology
             and personal developement so communication, adaptation and emotional intelligence come
@@ -103,6 +109,7 @@ const About = () => {
           </span>
         </p>
         <p>
+
           <span>
             I studied sound at the Microfusa School In Barcelona and specialized in studio
             recording.
@@ -110,6 +117,7 @@ const About = () => {
           For the past 10 years I dedicated myself to music &amp; sound production as well as
           performance arts.
           <br />
+
         </p>
         <p>
           Web developement is not new to me, I've worked as front end developer 10 years ago for a
@@ -123,11 +131,13 @@ const About = () => {
           <a href="https://digitalcareerinstitute.org/" target="_blank" rel="noreferrer">
             Digital Career Institute gGmbH.
           </a>
+
         </p>
         <p>
           <a href={curriculum} target="_blank" rel="noreferrer">
             {emoji.get('point_right')} RESUME {emoji.get('point_left')}
           </a>
+
         </p>
       </IntroText>
 
