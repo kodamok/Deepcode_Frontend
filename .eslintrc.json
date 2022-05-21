@@ -36,15 +36,15 @@
         "jsx-a11y/no-static-element-interactions": "off",
 
         "linebreak-style": [
-            "error",
+            "warn",
             "unix"
         ],
         "quotes": [
-            "error",
+            "warn",
             "single"
         ],
         "semi": [
-            "error",
+            "warn",
             "always"
         ]
     },
