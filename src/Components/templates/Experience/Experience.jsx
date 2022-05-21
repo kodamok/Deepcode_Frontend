@@ -151,25 +151,6 @@ const Experience = () => {
   ];
   //const grid = { logoImg: { columnStart: '2', columnEnd: '6', rowStart: '1', rowEnd: '2' } };
 
-const Container = styled.div`
-  max-width: 500px;
-  min-width: 250px;
-  position: relative;
-  // border: 2px solid red;
-`;
-
-const linkWithImgInfo = {
-  href: 'https://nomad-studio.netlify.app/',
-  imgSrc: NSx512,
-  alt: 'NomadStudio',
-  imgWidth: '215px',
-  underTitle: 'Nomad Studio',
-  description:
-    // eslint-disable-next-line max-len
-    'Final project of the MERN full-stack web development program at Digital Career Institute gGmbh. I was responsible of the UX Design, logo design and Front End side of the project.  The project is directed to the micro-management of projects, helping to create a clean workflow between customers and uprising creative freelancers.'
-};
-
-
   return (
     <Wrap>
       <h2>Experience</h2>
