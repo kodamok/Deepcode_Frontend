@@ -6,7 +6,6 @@ let emoji = require('node-emoji');
 
 
 // import curriculum from '../../../assets/files/curriculum.svg';
-
 const Wrap = styled.div`
   display: flex;
   flex-direction: column;
