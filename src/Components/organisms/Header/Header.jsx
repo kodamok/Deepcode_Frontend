@@ -1,6 +1,5 @@
 import React, { useRef, useState } from 'react';
 import styled, { keyframes } from 'styled-components';
-import { Link } from 'react-router-dom';
 import Logo from '../../atoms/Logo/Logo';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 import { FaGithubSquare } from 'react-icons/fa';
@@ -191,9 +190,9 @@ const Header = ({ themeSwitch, isLightTheme }) => {
   // MOBILE MENU SWITCH
   const [mobileMenu, setMobileMenu] = useState(false);
 
-  const handleOpenMenuMobile = () => {
+  /*  const handleOpenMenuMobile = () => {
     setMobileMenu((prev) => !prev);
-  };
+  }; */
 
   //DETECT SCREEN TO CHANGE BETWEEN NAV BARS
   const detectScreen = useMediaQuery('(max-width:720px)');
@@ -207,9 +206,7 @@ const Header = ({ themeSwitch, isLightTheme }) => {
       {detectScreen === false ? (
         <NavMenu>
           <div className="logo">
-            <Link to="/">
-              <Logo />
-            </Link>
+            <Logo />
           </div>
 
           <ul>
@@ -298,7 +295,7 @@ const Header = ({ themeSwitch, isLightTheme }) => {
                 />
               </div>
             </IconsBox>
-            <div onClick={() => handleOpenMenuMobile()}>
+            <div>
               <Logo />
             </div>
           </LogoMobile>
