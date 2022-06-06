@@ -35,7 +35,7 @@ body {
   font-family: 'Barrio', cursive;
   font-family: 'Josefin Sans', sans-serif;
   font-weight: 400;
-  line-height: 1.45;
+  line-height: 1.35;
   
 }
 

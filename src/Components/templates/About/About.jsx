@@ -1,6 +1,6 @@
 import React from 'react';
 import styled from 'styled-components';
-import curriculum from '../../../assets/files/curriculum.pdf';
+//import curriculum from '../../../assets/files/curriculum.pdf';
 let emoji = require('node-emoji');
 
 // import curriculum from '../../../assets/files/curriculum.svg';
@@ -21,7 +21,7 @@ const Wrap = styled.div`
 `;
 
 const IntroText = styled.div`
-  max-width: 70ch;
+  max-width: 80ch;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -32,13 +32,13 @@ const IntroText = styled.div`
   padding: clamp(0.5rem, 0.5rem + 3vw, 2rem);
   //box-shadow: ${({ theme }) => theme.boxShadow.mainShadow};
 
-  & > :nth-child(4) {
+  & > :nth-child(5) {
     text-align: center;
   }
 
   p {
     color: ${({ theme }) => theme.color.cream};
-    font-size: clamp(1rem, 0.1rem + 5vw, 1.2rem);
+    font-size: clamp(1rem, 0.1rem + 5vw, 1.5rem);
     text-align: left;
 
     > span {
@@ -93,41 +93,34 @@ const About = () => {
       <h2>About Me</h2>
       <IntroText>
         <p>
-          Hi my name is David Rabinovich, and I am the person people usually come to when they need
-          some advice and/or emotional support...why? <br /> well,{' '}
-          <span>
-            I've immigrated 3 times, I speak 5 languages and I have a strong interest in psychology
-            and personal developement so communication, adaptation and emotional intelligence come
-            natural to me. {emoji.get('smile')}
-          </span>
-        </p>
-        <p>
-          <span>
-            I studied sound at the Microfusa School In Barcelona and specialized in studio
-            recording.
-          </span>{' '}
-          For the past 10 years I dedicated myself to music &amp; sound production as well as
-          performance arts.
+          Hi my Name is Davit R. and I like to design websites with <span>Adobe XD</span> and then
+          program them within <span>React</span>.
           <br />
+          <span>Deep Code </span>
+          is the concept I developed that describes my approach toward life and coding.{' '}
+          {emoji.get('smile')}
+        </p>
+
+        <p>
+          <span>Deep</span> is your view through your life experences, those untransferible feelings
+          you have of your vision, life, yourself, bussiness idea, goals, passion or wish which lays
+          deep inside and you spend years trying to be in touch with. That inherent side of you that
+          makes you unique! <br />
+          <span>Code</span> is the materialization of all that in to the real world using the
+          language as a tool in your unique way.
         </p>
         <p>
-          Web developement is not new to me, I've worked as front end developer 10 years ago for a
-          short period of time with technologies like Adobe Flash, Javascript, Css and HTML.{' '}
           <span>
-            Recently I extended/updated my knowledge learning UX/UI Design together with few on-line
-            marketing tools through Udemy as well as Javascript, React and nodejs, HTML and CSS
-            while simultanously being the tutor and representative of my class{' '}
+            Imagine the effect a website can have when is created taking in count all this
+            information. If you are interested write me a message and we can start work on your
+            website today!
           </span>
-          at{' '}
-          <a href="https://digitalcareerinstitute.org/" target="_blank" rel="noreferrer">
-            Digital Career Institute gGmbH.
-          </a>
         </p>
-        <p>
+        {/* <p>
           <a href={curriculum} target="_blank" rel="noreferrer">
             {emoji.get('point_right')} RESUME {emoji.get('point_left')}
           </a>
-        </p>
+        </p> */}
       </IntroText>
 
       {/* <MyCv>

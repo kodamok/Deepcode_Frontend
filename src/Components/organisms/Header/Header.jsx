@@ -1,10 +1,10 @@
-import React, { useRef, useState } from 'react';
+import React from 'react';
 import styled, { keyframes } from 'styled-components';
 import Logo from '../../atoms/Logo/Logo';
 import useMediaQuery from '../../../hooks/useMediaQuery';
 import { FaGithubSquare } from 'react-icons/fa';
 import { FaLinkedin } from 'react-icons/fa';
-import useOnClickOutside from '../../../hooks/useOnClickOutside';
+/* import useOnClickOutside from '../../../hooks/useOnClickOutside'; */
 import Button from '../../atoms/Button/Button';
 
 /* const floating1 = keyframes`
@@ -35,6 +35,7 @@ const Wrap = styled.div`
   // border: 2px solid red;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: column;
   justify-content: center;
 `;
 const NavMenu = styled.nav`
@@ -99,6 +100,7 @@ const LogoMobile = styled.div`
   // border: 2px solid red;
 `;
 
+//Mobile styled component
 /* const MobileMenuContainer = styled.div`
   position: absolute;
   top: 73px;
@@ -163,6 +165,7 @@ const MobileMenu = styled.div`
   }
 `;
 
+//DROP MENU OBJECT FOR MOBILE
 /* const mobileDropMenu = [
   {
     id: 1,
@@ -187,9 +190,7 @@ const MobileMenu = styled.div`
 ]; */
 
 const Header = ({ themeSwitch, isLightTheme }) => {
-  // MOBILE MENU SWITCH
-  const [mobileMenu, setMobileMenu] = useState(false);
-
+  //const [mobileMenu, setMobileMenu] = useState(false);
   /*  const handleOpenMenuMobile = () => {
     setMobileMenu((prev) => !prev);
   }; */
@@ -198,8 +199,8 @@ const Header = ({ themeSwitch, isLightTheme }) => {
   const detectScreen = useMediaQuery('(max-width:720px)');
 
   // FUNCTIONALITY FOR CLICKING OUTSIDE AND CLOSE MOBILE MENU
-  const ref = useRef(null);
-  useOnClickOutside(ref, () => setMobileMenu(false));
+  //const ref = useRef(null);
+  //useOnClickOutside(ref, () => setMobileMenu(false));
 
   return (
     <Wrap>
@@ -210,7 +211,8 @@ const Header = ({ themeSwitch, isLightTheme }) => {
           </div>
 
           <ul>
-            {/* <li className="nav-box">
+            {/* MENU FOR DESKTOP
+            <li className="nav-box">
               <Link to="/about" className="link">
                 Who am I
               </Link>
@@ -299,10 +301,11 @@ const Header = ({ themeSwitch, isLightTheme }) => {
               <Logo />
             </div>
           </LogoMobile>
-
+          {/* 
           {mobileMenu &&
-            {
-              /* <MobileMenuContainer ref={ref}>
+            
+              //MENU FOR MOBILE
+              <MobileMenuContainer ref={ref}>
               <ul>
                 {mobileDropMenu.map((item) => (
                   <li className="nav-box" key={item.id}>
@@ -312,8 +315,8 @@ const Header = ({ themeSwitch, isLightTheme }) => {
                   </li>
                 ))}
               </ul>
-            </MobileMenuContainer> */
-            }}
+            </MobileMenuContainer> 
+            }} */}
         </MobileMenu>
       )}
     </Wrap>
